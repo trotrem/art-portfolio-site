@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Scroller from "./Scroller.js";
 
 const Grid = styled.div`
         display: grid;
@@ -45,7 +46,7 @@ const ComicPage = ({props}) =>
                         margin
                         </ComicMargin>
                         <Comic>
-                        comic
+                                <Scroller></Scroller>
                         </Comic>
                 </Center>
                 <Right>right</Right>
