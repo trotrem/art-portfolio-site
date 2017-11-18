@@ -26,29 +26,26 @@ const list = [
   // And so on...
 ];
 
-function rowRenderer ({
+const rowRenderer = ({
   key,         // Unique key within array of rows
   index,       // Index of row within collection
   isScrolling, // The List is currently being scrolled
   isVisible,   // This row is visible within the List (eg it is not an overscanned row)
   style        // Style object to be applied to row (to position it)
-}) {
-  return (
+}) =>
     <div
       key={key}
-      style={style}
+      style ={style}      
     >
-      {list[index]}
-    </div>
-  )
-}
+      <img src={require('../static/img/' + ((index) % 28 + 1) + '.png')}/>
+    </div>;
 
 const Scroller = ({props}) =>
   <List
-    width={300}
-    height={300}
-    rowCount={list.length}
-    rowHeight={20}
+    width={800}
+    height={900}
+    rowCount={1000}
+    rowHeight={900}
     rowRenderer={rowRenderer}
   />;
 
