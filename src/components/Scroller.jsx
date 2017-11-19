@@ -1,6 +1,16 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { List, WindowScroller } from "react-virtualized";
+import React from "react";
+import { media } from "../static/js/style-utils.js";
+import styled from "styled-components";
+import { List, AutoSizer, WindowScroller } from "react-virtualized";
+
+const ComicPage = styled.img`
+  ${media.tablet`
+max-width: 100%`};
+`;
+
+const rowHeight = width => {
+  return Math.min(990, width * 990 / 765);
+};
 
 const rowRenderer = ({
   key, // Unique key within array of rows
@@ -10,25 +20,32 @@ const rowRenderer = ({
   style // Style object to be applied to row (to position it)
 }) => (
   <div key={key} style={style}>
-    <img src={require("../static/img/" + (index % 28 + 1) + ".png")} />
+    <ComicPage src={require("../static/img/" + (index % 28 + 1) + ".png")} />
   </div>
 );
 
-const Scroller = ({ height }) => (
-  <WindowScroller>
-  {({ isScrolling, onChildScroll, scrollTop }) => (
-    <List
-      autoHeight
-      height={height}
-      isScrolling={isScrolling}
-      onScroll={onChildScroll}
-      rowCount={28}
-      rowHeight={990}
-      rowRenderer={rowRenderer}
-      scrollTop={scrollTop}
-      width={765}
-    />)}
-  </WindowScroller>
-);
+const Scroller = ({ props }) => {
+  return (
+      <WindowScroller>
+        {({ height, isScrolling, onChildScroll, scrollTop }) => (
+          <AutoSizer disableHeight>
+            {({ width }) => (
+              <List
+                autoHeight
+                height={height}
+                isScrolling={isScrolling}
+                onScroll={onChildScroll}
+                rowCount={28}
+                rowHeight={rowHeight(width)}
+                rowRenderer={rowRenderer}
+                scrollTop={scrollTop}
+                width={width}
+              />
+            )}
+          </AutoSizer>
+        )}
+      </WindowScroller>
+  );
+};
 
 export default Scroller;

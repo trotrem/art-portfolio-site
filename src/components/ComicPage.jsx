@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "../static/js/style-utils.js";
 import Scroller from "./Scroller.jsx";
-import Dimensions from "react-container-dimensions";
 
 const Grid = styled.div`
   display: grid;
@@ -23,8 +22,7 @@ const Comic = styled.div`
   grid-area: comic;
   background-color: #aaaabb;
   display: grid;
-  justify-items: center;
-  align-items: center;
+  max-width:765px;
 `;
 
 const Left = styled.div`
@@ -53,9 +51,7 @@ const ComicPage = ({ props }) => (
     <Top>top</Top>
     <Left>left</Left>
     <Comic>
-      <Dimensions>
-        <Scroller />
-      </Dimensions>
+      <Scroller/>
     </Comic>
     <Right>right</Right>
   </Grid>
