@@ -5,7 +5,7 @@ import Scroller from "./Scroller.jsx";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 765px 1fr;
   grid-template-rows: 50px 1fr;
   grid-template-areas:  "top       top     top" 
                         "left      comic   right";
@@ -15,7 +15,6 @@ const Grid = styled.div`
         grid-template-areas:    "top"
                                 "comic";
   `};
-  height: 100vh;
 `;
 
 const Comic = styled.div`
