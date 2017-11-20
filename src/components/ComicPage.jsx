@@ -6,8 +6,8 @@ import { Sticky, StickyContainer } from "react-sticky";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: "top" "content";
+  grid-template-rows: 250px 1fr;
+  grid-template-areas: "banner" "sticky";
 `;
 
 const Comic = styled.div`
@@ -17,7 +17,7 @@ const Comic = styled.div`
 `;
 
 const LeftMargin = styled.div`
-  height: 100vh;
+  height: 200vh;
   background-color: #aa99bb;
   ${media.tablet`
       display:none;
@@ -25,84 +25,66 @@ const LeftMargin = styled.div`
 `;
 
 const RightMargin = styled.div`
-  height: 100vh;
+  height: 200vh;
   background-color: #aa4455;
   ${media.tablet`
       display:none;
   `};
 `;
 
+const NavigationBar = styled.div`
+  height: 50px;
+  background-color: #4499bb;
+`;
+
 const Top = styled.div`
-  grid-area: top;
+  grid-area: banner;
   background-color: #4499ff;
 `;
 
-const LeftSticky = styled(Sticky)`
-  grid-area: left;
-`;
+const LeftSticky = styled(Sticky)`grid-area: left;`;
 
-const RightSticky = styled(Sticky)`
-  grid-area: right;
-`;
+const RightSticky = styled(Sticky)`grid-area: right;`;
+
+const NavSticky = styled(Sticky)`grid-area: navigation;`;
 
 const StyledStickyContainer = styled(StickyContainer)`
+  grid-area: sticky;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "navigation" "content";
+`;
+
+const ComicContainer = styled.div`
   grid-area: content;
   display: grid;
   grid-template-columns: 1fr 765px 1fr;
   grid-template-areas: "left comic right";
   ${media.tablet`
-        grid-template-columns: 1fr;
-        grid-template-areas: "comic";
-  `};
+      grid-template-columns: 1fr;
+      grid-template-areas: "comic";
+`};
 `;
 
 const ComicPage = ({ props }) => (
   <Grid>
-    <Top>top</Top>
+    <Top>banner</Top>
 
     <StyledStickyContainer>
-      <LeftSticky>
-        {({
-          isSticky,
-          wasSticky,
-          style,
-          distanceFromTop,
-          distanceFromBottom,
-          calculatedHeight
-        }) => {
-          console.log({
-            isSticky,
-            wasSticky,
-            style,
-            distanceFromTop,
-            distanceFromBottom,
-            calculatedHeight
-          });
-          return <LeftMargin style={style}>left</LeftMargin>;
-        }}
-      </LeftSticky>
-      <Comic>
-        <Scroller />
-      </Comic>
-      <RightSticky>
-      {({
-          isSticky,
-          wasSticky,
-          style,
-          distanceFromTop,
-          distanceFromBottom,
-          calculatedHeight
-        }) => {
-          console.log({
-            isSticky,
-            wasSticky,
-            style,
-            distanceFromTop,
-            distanceFromBottom,
-            calculatedHeight
-          });
-          return <RightMargin style={style}>right</RightMargin>;
-        }}</RightSticky>
+      <ComicContainer>
+        <LeftSticky>
+          {({ style }) => <LeftMargin style={style}>left</LeftMargin>}
+        </LeftSticky>
+        <Comic>
+          <Scroller />
+        </Comic>
+        <RightSticky>
+          {({ style }) => <RightMargin style={style}>right</RightMargin>}
+        </RightSticky>
+      </ComicContainer>
+      <NavSticky>
+        {({ style }) => <NavigationBar style={style}>nav</NavigationBar>}
+      </NavSticky>
     </StyledStickyContainer>
   </Grid>
 );

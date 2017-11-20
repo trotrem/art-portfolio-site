@@ -4,12 +4,14 @@ import styled from "styled-components";
 import { List, AutoSizer, WindowScroller } from "react-virtualized";
 
 const ComicPage = styled.img`
-  ${media.tablet`
-max-width: 100%`};
+max-width: 100%;
+border-bottom: 10px solid;
+border-color: black;
+background: black;
 `;
 
 const rowHeight = width => {
-  return Math.min(990, width * 990 / 765);
+  return Math.min(1000, width * 1000 / 765);
 };
 
 const rowRenderer = ({
