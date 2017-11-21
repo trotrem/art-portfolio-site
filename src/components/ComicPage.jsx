@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "../static/js/style-utils.js";
 import Scroller from "./Scroller.jsx";
-import { Sticky, StickyContainer } from "react-sticky";
+import Sticky from "react-stickynode";
+import NavBar from "./NavBar.jsx"
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 250px 1fr;
-  grid-template-areas: "banner" "sticky";
+  grid-template-rows: 250px 50px 1fr;
+  grid-template-areas: "banner" "navigation" "content";
 `;
 
 const Comic = styled.div`
@@ -32,12 +33,16 @@ const RightMargin = styled.div`
   `};
 `;
 
-const NavigationBar = styled.div`
-  height: 50px;
-  background-color: #4499bb;
+const Navi = styled(NavBar)`
+height: 50px;
+background-color: #aabb55;
 `;
 
-const Top = styled.div`
+const Navi2 = Navi.extend`
+
+;`
+
+const TopBanner = styled.div`
   grid-area: banner;
   background-color: #4499ff;
 `;
@@ -47,13 +52,6 @@ const LeftSticky = styled(Sticky)`grid-area: left;`;
 const RightSticky = styled(Sticky)`grid-area: right;`;
 
 const NavSticky = styled(Sticky)`grid-area: navigation;`;
-
-const StyledStickyContainer = styled(StickyContainer)`
-  grid-area: sticky;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: "navigation" "content";
-`;
 
 const ComicContainer = styled.div`
   grid-area: content;
@@ -68,24 +66,21 @@ const ComicContainer = styled.div`
 
 const ComicPage = ({ props }) => (
   <Grid>
-    <Top>banner</Top>
-
-    <StyledStickyContainer>
+    <TopBanner>banner</TopBanner>
       <ComicContainer>
-        <LeftSticky>
-          {({ style }) => <LeftMargin style={style}>left</LeftMargin>}
-        </LeftSticky>
+        <Sticky>
+          <LeftMargin>left</LeftMargin>
+        </Sticky>
         <Comic>
           <Scroller />
         </Comic>
-        <RightSticky>
-          {({ style }) => <RightMargin style={style}>right</RightMargin>}
-        </RightSticky>
+        <Sticky>
+          <RightMargin>right</RightMargin>
+        </Sticky>
       </ComicContainer>
-      <NavSticky>
-        {({ style }) => <NavigationBar style={style}>nav</NavigationBar>}
-      </NavSticky>
-    </StyledStickyContainer>
+      <Sticky>
+        <Navi>nav</Navi>
+      </Sticky>
   </Grid>
 );
 
