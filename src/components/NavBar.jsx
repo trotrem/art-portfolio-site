@@ -1,29 +1,30 @@
 import React from "react";
-import { media } from "../static/js/style-utils.js";
 import styled from "styled-components";
+import Button from "./NavButton.jsx"
 
-const Grid = styled.div`
+const Nav = styled.div`
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "a a a a";
   height: 50px;
-  background-color: #4499bb;
+  background-color: #447093;
+  align-items: center;
+  justify-items: center;
 `;
 
-const Button = styled.button`
-  color: palevioletred;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+const NavButton = styled(Button)`
+  grid-area: a;
 `;
 
-const NavBar = ({ props }) => {
+const NavBar = (props) => {
   return (
-    <Grid>
-      <Button>Home</Button>
-      <Button>Euh...</Button>
-      <Button>What else?</Button>
-      <Button>About!</Button>
-    </Grid>
+    <Nav>
+      <NavButton to="/">Home</NavButton>
+      <NavButton to="/">Euh...</NavButton>
+      <NavButton to="/">What else?</NavButton>
+      <NavButton to="/">About!</NavButton>
+    </Nav>
   );
 };
 

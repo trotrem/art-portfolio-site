@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../static/js/style-utils.js";
+import { Route } from 'react-router-dom';
 import Scroller from "./Scroller.jsx";
 import Sticky from "react-stickynode";
 import NavBar from "./NavBar.jsx"
@@ -13,13 +14,12 @@ const Grid = styled.div`
 
 const Comic = styled.div`
   grid-area: comic;
-  background-color: #aaaabb;
-  max-width: 765px;
+  max-width: ${props => props.HiRez ? '1275px' : '765px'};
 `;
 
 const LeftMargin = styled.div`
   height: 200vh;
-  background-color: #aa99bb;
+  background-color: #aa7093;
   ${media.tablet`
       display:none;
   `};
@@ -27,36 +27,20 @@ const LeftMargin = styled.div`
 
 const RightMargin = styled.div`
   height: 200vh;
-  background-color: #aa4455;
+  background-color: #aa7093;
   ${media.tablet`
       display:none;
   `};
 `;
-
-const Navi = styled(NavBar)`
-height: 50px;
-background-color: #aabb55;
-`;
-
-const Navi2 = Navi.extend`
-
-;`
-
 const TopBanner = styled.div`
   grid-area: banner;
-  background-color: #4499ff;
+  background-color: #aa7093;
 `;
-
-const LeftSticky = styled(Sticky)`grid-area: left;`;
-
-const RightSticky = styled(Sticky)`grid-area: right;`;
-
-const NavSticky = styled(Sticky)`grid-area: navigation;`;
 
 const ComicContainer = styled.div`
   grid-area: content;
   display: grid;
-  grid-template-columns: 1fr 765px 1fr;
+  grid-template-columns: ${props => props.HiRez ? '1fr 1275px 1fr' : '1fr 765px 1fr'};
   grid-template-areas: "left comic right";
   ${media.tablet`
       grid-template-columns: 1fr;
@@ -64,22 +48,23 @@ const ComicContainer = styled.div`
 `};
 `;
 
-const ComicPage = ({ props }) => (
+const ComicPage = (props) => (
   <Grid>
-    <TopBanner>banner</TopBanner>
-      <ComicContainer>
+    <TopBanner/>
+      <ComicContainer HiRez={props.HiRez}>
         <Sticky>
-          <LeftMargin>left</LeftMargin>
+          <LeftMargin/>
         </Sticky>
-        <Comic>
-          <Scroller />
+        <Comic HiRez={props.HiRez}>
+          <Route exact={true} path="/mandy" render={() => <Scroller pageNum={0} HiRez={props.HiRez}/>}/>
+          <Route exact={true} path="/mandy/:pageNum" render={({match}) => <Scroller pageNum={match.params.pageNum} HiRez={props.HiRez}/>}/>
         </Comic>
         <Sticky>
-          <RightMargin>right</RightMargin>
+          <RightMargin/>
         </Sticky>
       </ComicContainer>
       <Sticky>
-        <Navi>nav</Navi>
+        <NavBar/>
       </Sticky>
   </Grid>
 );
