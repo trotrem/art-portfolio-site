@@ -4,22 +4,29 @@ import { media } from "../static/js/style-utils.js";
 import { Route } from 'react-router-dom';
 import Scroller from "./Scroller.jsx";
 import Sticky from "react-stickynode";
-import NavBar from "./NavBar.jsx"
+import NavBar from "./NavBar.jsx";
+import glamorous from 'glamorous';
+import background from '../static/img/background.png';
+import banner from '../static/img/banner.png';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 250px 50px 1fr;
+  grid-template-rows: 684px 50px 1fr;
   grid-template-areas: "banner" "navigation" "content";
+  background-image: url(${background});
+  background-attachment: fixed;
 `;
 
 const Comic = styled.div`
   grid-area: comic;
-  max-width: ${props => props.HiRez ? '1275px' : '765px'};
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 `;
 
 const LeftMargin = styled.div`
   height: 200vh;
-  background-color: #aa7093;
   ${media.tablet`
       display:none;
   `};
@@ -27,37 +34,43 @@ const LeftMargin = styled.div`
 
 const RightMargin = styled.div`
   height: 200vh;
-  background-color: #aa7093;
   ${media.tablet`
       display:none;
   `};
 `;
 const TopBanner = styled.div`
   grid-area: banner;
-  background-color: #aa7093;
+  background-image: url(${banner});
+  background-position: center;
 `;
 
-const ComicContainer = styled.div`
-  grid-area: content;
-  display: grid;
-  grid-template-columns: ${props => props.HiRez ? '1fr 1275px 1fr' : '1fr 765px 1fr'};
-  grid-template-areas: "left comic right";
-  ${media.tablet`
-      grid-template-columns: 1fr;
-      grid-template-areas: "comic";
-`};
-`;
+const ComicContainer = glamorous.div(
+  ({pageWidth = 765}) => ({
+    gridTemplateColumns: '1fr ' + pageWidth + 'px 1fr',
+  }),
+  {
+    gridArea: 'content',
+    display: 'grid',
+    gridTemplateAreas: `"left comic right"`,
+    '@media(max-width: 400px)': {
+      gridTemplateColumns: '1fr',
+      gridTemplateAreas: `"comic"`
+    }
+  }
+);
+
+const scrollerRenderer = (props, page) => <Scroller pageNum={page} folder={props.folder} pageWidth={props.pageWidth}/>;
 
 const ComicPage = (props) => (
   <Grid>
     <TopBanner/>
-      <ComicContainer HiRez={props.HiRez}>
+      <ComicContainer pageWidth={props.pageWidth}>
         <Sticky>
           <LeftMargin/>
         </Sticky>
-        <Comic HiRez={props.HiRez}>
-          <Route exact={true} path="/mandy" render={() => <Scroller pageNum={0} HiRez={props.HiRez}/>}/>
-          <Route exact={true} path="/mandy/:pageNum" render={({match}) => <Scroller pageNum={match.params.pageNum} HiRez={props.HiRez}/>}/>
+        <Comic>
+          <Route exact={true} path="/mandy" render={() => scrollerRenderer(props, 0)}/>
+          <Route exact={true} path="/mandy/:pageNum" render={({match}) => scrollerRenderer(props, match.params.pageNum)}/>
         </Comic>
         <Sticky>
           <RightMargin/>

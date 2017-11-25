@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { List, AutoSizer, WindowScroller } from "react-virtualized";
+import styles from '../static/css/styles.css'
 
 const ComicPage = styled.img`
 max-width: 100%;
@@ -9,15 +10,11 @@ border-color: black;
 background: black;
 `;
 
-const rowHeight = (width, HiRez) => {
-  if(HiRez)
-    return Math.min(1660, width * 1660 / 1275);
-  else
-    return Math.min(1000, width * 1000 / 765);
+const rowHeight = (width, pageWidth) => {
+    return Math.min(pageWidth * (990/765), width * (990/765));
 };
 
-function rowRenderer(HiRez) {
-  let folderName = HiRez? 'HiRez': 'LoRez';
+function rowRenderer(folder) {
   return function({
     key, // Unique key within array of rows
     index, // Index of row within collection
@@ -27,7 +24,7 @@ function rowRenderer(HiRez) {
   }){
     return (
       <div key={key} style={style}>
-        <ComicPage src={require("../static/img/" + folderName + "/" + (index % 28 + 1) + ".png")} />
+        <ComicPage src={require("../static/img/" + folder + "/" + (index % 28 + 1) + ".png")} />
       </div>
     );
   }
@@ -35,6 +32,7 @@ function rowRenderer(HiRez) {
 
 const Scroller = (props) => {
   return (
+    <div className={styles.WindowScrollerWrapper}>
       <WindowScroller>
         {({ height, isScrolling, onChildScroll, scrollTop }) => (
           <AutoSizer disableHeight>
@@ -46,8 +44,8 @@ const Scroller = (props) => {
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
                 rowCount={28}
-                rowHeight={rowHeight(width, props.HiRez)}
-                rowRenderer={rowRenderer(props.HiRez)}
+                rowHeight={rowHeight(width, props.pageWidth)}
+                rowRenderer={rowRenderer(props.folder)}
                 scrollTop={scrollTop}
                 width={width}
                 scrollToIndex={props.pageNum - 1}
@@ -57,6 +55,7 @@ const Scroller = (props) => {
           </AutoSizer>
         )}
       </WindowScroller>
+    </div>
   );
 };
 
