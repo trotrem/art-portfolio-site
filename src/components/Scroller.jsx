@@ -8,13 +8,6 @@ const ComicPage = styled.img`
   border: 10px solid black;
 `;
 
-const rowHeight = (width, pageWidth, borderSize) => {
-  return Math.min(
-    pageWidth * ((990 + borderSize) / 765),
-    width * ((990 + borderSize) / 765)
-  );
-};
-
 function rowRenderer(folder) {
   return function({ key, index, style }) {
     return (
@@ -44,7 +37,7 @@ const Scroller = props => {
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
                 rowCount={28}
-                rowHeight={rowHeight(width, props.resolution[0], 10)}
+                rowHeight={props.resolution[1]}
                 rowRenderer={rowRenderer(props.resolution[2])}
                 scrollTop={scrollTop}
                 width={width}

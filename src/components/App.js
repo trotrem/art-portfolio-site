@@ -17,7 +17,7 @@ class App extends Component {
           <Route path="/" exact={true} component={Main} />>
           <Route
             path="/mandy"
-            render={() => <Comic resolution={comicResolutions[0]}/>}
+            render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}
           />
         </Switch>
       </BrowserRouter>
