@@ -45,32 +45,32 @@ const TopBanner = styled.div`
 `;
 
 const ComicContainer = glamorous.div(
-  ({pageWidth = 765}) => ({
+  ({pageWidth}) => ({
     gridTemplateColumns: '1fr ' + pageWidth + 'px 1fr',
   }),
   {
     gridArea: 'content',
     display: 'grid',
     gridTemplateAreas: `"left comic right"`,
-    '@media(max-width: 400px)': {
+    '@media(max-width: 750px)': {
       gridTemplateColumns: '1fr',
       gridTemplateAreas: `"comic"`
     }
   }
 );
 
-const scrollerRenderer = (props, page) => <Scroller pageNum={page} folder={props.folder} pageWidth={props.pageWidth}/>;
+const scrollerRenderer = (resolution, page) => <Scroller pageNum={page} resolution={resolution}/>;
 
 const ComicPage = (props) => (
   <Grid>
     <TopBanner/>
-      <ComicContainer pageWidth={props.pageWidth}>
+      <ComicContainer pageWidth={props.resolution[0]}>
         <Sticky>
           <LeftMargin/>
         </Sticky>
         <Comic>
-          <Route exact={true} path="/mandy" render={() => scrollerRenderer(props, 0)}/>
-          <Route exact={true} path="/mandy/:pageNum" render={({match}) => scrollerRenderer(props, match.params.pageNum)}/>
+          <Route exact={true} path="/mandy" render={() => scrollerRenderer(props.resolution, 0)}/>
+          <Route exact={true} path="/mandy/:pageNum" render={({match}) => scrollerRenderer(props.resolution, match.params.pageNum)}/>
         </Comic>
         <Sticky>
           <RightMargin/>

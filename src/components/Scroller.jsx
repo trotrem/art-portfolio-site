@@ -5,22 +5,18 @@ import styles from '../static/css/styles.css'
 
 const ComicPage = styled.img`
 max-width: 100%;
-border-bottom: 10px solid;
-border-color: black;
-background: black;
+border: 10px solid black;
 `;
 
-const rowHeight = (width, pageWidth) => {
-    return Math.min(pageWidth * (990/765), width * (990/765));
+const rowHeight = (width, pageWidth, borderSize) => {
+    return Math.min(pageWidth * ((990 + borderSize)/765), width * ((990 + borderSize)/765));
 };
 
 function rowRenderer(folder) {
   return function({
-    key, // Unique key within array of rows
-    index, // Index of row within collection
-    isScrolling, // The List is currently being scrolled
-    isVisible, // This row is visible within the List (eg it is not an overscanned row)
-    style // Style object to be applied to row (to position it)
+    key,
+    index,
+    style
   }){
     return (
       <div key={key} style={style}>
@@ -44,8 +40,8 @@ const Scroller = (props) => {
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
                 rowCount={28}
-                rowHeight={rowHeight(width, props.pageWidth)}
-                rowRenderer={rowRenderer(props.folder)}
+                rowHeight={rowHeight(width, props.resolution[0], 0)}
+                rowRenderer={rowRenderer(props.resolution[2])}
                 scrollTop={scrollTop}
                 width={width}
                 scrollToIndex={props.pageNum - 1}

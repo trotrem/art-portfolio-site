@@ -4,9 +4,10 @@ import Comic from "./ComicPage.jsx";
 import Main from "./MainPage.jsx";
 
 // Resolution Parameters
-/* LoRez: 765 HiRez: 1275 */
-const folderName = "HiRez";
-const page = 1275;
+const comicResolutions = [
+  [765, 990, "LoRez"],
+  [1275, 1650, "HiRez"]
+]
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
           <Route path="/" exact={true} component={Main} />>
           <Route
             path="/mandy"
-            render={() => <Comic folder={folderName} pageWidth={page} borderSize={10}/>}
+            render={() => <Comic resolution={comicResolutions[0]}/>}
           />
         </Switch>
       </BrowserRouter>
