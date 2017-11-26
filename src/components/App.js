@@ -4,10 +4,12 @@ import Comic from "./ComicPage.jsx";
 import Main from "./MainPage.jsx";
 
 // Resolution Parameters
+/*
 const comicResolutions = [
   [765, 990, "LoRez"],
   [1275, 1650, "HiRez"]
 ]
+*/
 
 class App extends Component {
   render() {

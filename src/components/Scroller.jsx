@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { List, AutoSizer, WindowScroller } from "react-virtualized";
-import styles from "../static/css/styles.css";
 
 const ComicPage = styled.img`
   max-width: 100%;

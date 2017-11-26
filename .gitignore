@@ -19,6 +19,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src/static/img/*.png
-src/static/img/LoRez/*.png
-src/static/img/HiRez/*.png

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../static/js/style-utils.js";
 import { Route } from "react-router-dom";
 import Scroller from "./Scroller.jsx";
 import Sticky from "react-stickynode";
