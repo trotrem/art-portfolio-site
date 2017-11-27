@@ -5,14 +5,13 @@ import Parallax from "./Parallax.jsx";
 const Container = styled.div`
   background-color: #898989;
   height: 500vh;
+  overflow-x: hidden;
 `;
 
 const StyledLayer = styled.img`
   position: absolute;
   top: 0px;
   left: 0px;
-  max-width: 100%;
-  height:1080px;
 `;
 
 const MainPage = props => (
