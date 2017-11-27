@@ -5,8 +5,8 @@ import Scroller from "./Scroller.jsx";
 import Sticky from "react-stickynode";
 import NavBar from "./NavBar.jsx";
 import glamorous from "glamorous";
-import background from "../static/img/background.png";
-import banner from "../static/img/banner.png";
+import background from "./img/background.png";
+import banner from "./img/banner.png";
 
 const Grid = styled.div`
   display: grid;

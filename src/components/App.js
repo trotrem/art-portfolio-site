@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Comic from "./ComicPage.jsx";
-import Main from "./MainPage.jsx";
+import Comic from "./scenes/mandyComic/ComicPage.jsx";
+import Main from "./scenes/mainPage/MainPage.jsx";
 
 // Resolution Parameters
 /*

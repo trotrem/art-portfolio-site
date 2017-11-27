@@ -12,7 +12,7 @@ function rowRenderer(folder) {
     return (
       <div key={key} style={style}>
         <ComicPage
-          src={require("../static/img/" +
+          src={require("./img/" +
             folder +
             "/" +
             (index % 28 + 1) +
