@@ -3,12 +3,13 @@ import styled from "styled-components";
 import PlxLayer from "./ParallaxLayer.jsx";
 
 const Parallax = props => {
-  var layers = props.children.map((child, index) => {
+  const children = props.children;
+  var layers = React.Children.map(children, (child, index) => {
     console.log(child.props.duration)
     return(<PlxLayer key={index}{...child.props}>{child}</PlxLayer>);
   });
 return(
-  <div>
+  <div style={{height:props.height}}>
   {layers}
   </div>
 )
