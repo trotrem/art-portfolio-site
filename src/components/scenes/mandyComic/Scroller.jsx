@@ -7,6 +7,10 @@ const ComicPage = styled.img`
   border: 10px solid black;
 `;
 
+const heightCalculator = (widthSetting, heightSetting, currentWidth) => {
+  return heightSetting / widthSetting * currentWidth;
+}
+
 function rowRenderer(folder) {
   return function({ key, index, style }) {
     return (
@@ -36,7 +40,7 @@ const Scroller = props => {
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
                 rowCount={28}
-                rowHeight={props.resolution[1]}
+                rowHeight={heightCalculator(props.resolution[0], props.resolution[1], width)}
                 rowRenderer={rowRenderer(props.resolution[2])}
                 scrollTop={scrollTop}
                 width={width}

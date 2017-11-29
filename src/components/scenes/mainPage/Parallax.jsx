@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import PlxLayer from "./ParallaxLayer.jsx";
 
 const Parallax = props => {
