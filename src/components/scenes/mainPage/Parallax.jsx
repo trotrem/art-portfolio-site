@@ -8,7 +8,7 @@ const Parallax = props => {
     return(<PlxLayer key={index}{...child.props}>{child}</PlxLayer>);
   });
 return(
-  <div style={{height:props.height}}>
+  <div>
   {layers}
   </div>
 )

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Parallax from "./Parallax.jsx";
+import {Parallax} from "react-parallax";
+import ShelfMenu from "./ShelfMenu.jsx"
 
 const Container = styled.div`
   position: relative;
@@ -18,24 +19,28 @@ const Tontainer = styled.div`
   width:100%;
 `;
 
-const StyledLayer = styled.img`
+const StyledLayer = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
+  height: 1080px;
+  width:100%;
 `;
+
+const layerPath = "./img/plxLayers/compressed/";
 
 const MainPage = props => (
   <Container >
-    <Parallax style={{height:"1080px"}}>
-      <StyledLayer src={require("./img/plxLayers/1.png")} duration={1000} endValue={700}/>
-      <StyledLayer src={require("./img/plxLayers/2.png")} duration={1000} endValue={600}/>
-      <StyledLayer src={require("./img/plxLayers/3.png")} duration={1000} endValue={500}/>
-      <StyledLayer src={require("./img/plxLayers/4.png")} duration={1000} endValue={200}/>
-      <StyledLayer src={require("./img/plxLayers/5.png")} duration={1000} endValue={100}/>
-      <StyledLayer src={require("./img/plxLayers/6.png")} duration={1000} endValue={50}/>
-      <StyledLayer src={require("./img/plxLayers/7.png")} duration={1000} endValue={0}/>
-    </Parallax>
-    <Tontainer/>
+    <StyledLayer><Parallax bgImage={require(layerPath + "1.png")} bgHeight="1080px" strength={700}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <StyledLayer><Parallax bgImage={require(layerPath + "2.png")} bgHeight="1080px" strength={600}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <StyledLayer><Parallax bgImage={require(layerPath + "3.png")} bgHeight="1080px" strength={300}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <StyledLayer><Parallax bgImage={require(layerPath + "4.png")} bgHeight="1080px" strength={200}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <StyledLayer><Parallax bgImage={require(layerPath + "5.png")} bgHeight="1080px" strength={100}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <StyledLayer><img src={require(layerPath + "6.png")}/></StyledLayer>
+    <StyledLayer><Parallax bgImage={require(layerPath + "7.png")} bgHeight="1080px" strength={-30}><div style={{height: 1080}}/></Parallax></StyledLayer>
+    <Tontainer>
+      <ShelfMenu/>
+    </Tontainer>
   </Container>
 );
 
