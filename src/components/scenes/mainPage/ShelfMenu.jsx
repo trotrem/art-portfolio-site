@@ -13,7 +13,8 @@ const Container = styled.div`
 `;
 
 const Button = styled(Link)`
-  display: block;
+  display: flex;
+  justify-content: center;
   max-width: 100%;
   color: white;
   border: 8px solid white;
@@ -29,13 +30,13 @@ const Button = styled(Link)`
 `;
 
 const StyledImage = styled.img`
-  width: 980px;
+  flex:none;
 `;
 
 const ShelfMenu = props => (
   <Container>
     <Button to="/goblins">
-      <StyledImage src={goblins} />
+      <StyledImage src={goblins} style={{height:"2000px"}}/>
     </Button>
     <Button to="/mandy">
       <StyledImage src={mandy} />
