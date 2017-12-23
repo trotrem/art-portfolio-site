@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   position: relative;
   margin: auto;
-  background-color: #898989;
+  background-color: #446644;
   top: 200px;
   width: 100%;
   max-width: 1200px;
@@ -15,13 +15,14 @@ const Container = styled.div`
 
 const Button = styled(Link)`
   display: block;
-  maxwidth: 100%;
+  max-width: 100%;
   color: white;
   border: 8px solid white;
   height: 684px;
   overflow: hidden;
   &:hover {
     opacity: 0.9;
+    background-color: #449944;
     cursor: pointer;
   }
 `;
