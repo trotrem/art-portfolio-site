@@ -9,7 +9,8 @@ margin: auto;
 background-color: #f98ff9;
 top: 200px;
 height: calc(100% - 200px);
-width:70%;
+width:100%;
+max-width:1200px;
 `;
 
 const Button = styled(Link)`

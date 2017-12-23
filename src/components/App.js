@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Comic from "./scenes/comic/ComicPage.jsx";
-import Main from "./scenes/mainPage/MainPage.jsx";
+import Comic from "./scenes/comic/Main.jsx";
+import Home from "./scenes/mainPage/Main.jsx";
+import Goblins from "./scenes/goblins/Main.jsx";
 
 // Resolution Parameters
 /*
@@ -16,10 +17,14 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact={true} component={Main} />>
+          <Route path="/" exact={true} component={Home} />>
           <Route
             path="/mandy"
             render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}
+          />
+          <Route
+            path="/goblins"
+            render={() => <Goblins/>}
           />
         </Switch>
       </BrowserRouter>
