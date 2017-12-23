@@ -19,8 +19,7 @@ const ShelfContainer = glamorous.div(
   {
   top: imageHeight.toString(),
   left: "0px",
-  backgroundColor: "#898ff9",
-  width: "100%"
+  backgroundColor: "#898ff9"
   }
 );
 
