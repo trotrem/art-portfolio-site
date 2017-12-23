@@ -10,7 +10,6 @@ const StyledLayer = styled.div`
 `;
 
 const Plx = props => {
-  console.log(props.height);
   return(
     <StyledLayer>
       <Parallax

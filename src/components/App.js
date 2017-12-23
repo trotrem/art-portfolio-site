@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Comic from "./scenes/comic/Main.jsx";
 import Home from "./scenes/mainPage/Main.jsx";
 import Goblins from "./scenes/goblins/Main.jsx";
+import ScrollToTopRoute from "./common/ScrollToTopRoute.jsx";
 
 // Resolution Parameters
 /*
@@ -15,14 +16,14 @@ const comicResolutions = [
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
         <Switch>
-          <Route path="/" exact={true} component={Home} />>
+          <ScrollToTopRoute path="/" exact={true} component={Home}/>
           <Route
             path="/mandy"
             render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}
           />
-          <Route
+          <ScrollToTopRoute
             path="/goblins"
             render={() => <Goblins/>}
           />
