@@ -7,6 +7,8 @@ const layerPath = "./img/plxLayers/";
 
 const imageHeight = 3839;
 
+const realHeight = 1950;
+
 const PageContainer = glamorous.div(
   {
   position: "relative",
@@ -17,9 +19,10 @@ const PageContainer = glamorous.div(
 
 const ShelfContainer = glamorous.div(
   {
-  top: imageHeight.toString(),
+    position:"absolute",
+  top: realHeight.toString(),
   left: "0px",
-  backgroundColor: "#898ff9"
+  width: "100%"
   }
 );
 

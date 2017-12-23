@@ -7,10 +7,9 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   position: relative;
   margin: auto;
-  background-color: #446644;
-  top: 200px;
+  top: 100px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 980px;
 `;
 
 const Button = styled(Link)`
@@ -18,8 +17,10 @@ const Button = styled(Link)`
   max-width: 100%;
   color: white;
   border: 8px solid white;
-  height: 684px;
+  height: 480px;
   overflow: hidden;
+  margin: 0px 0 50px 0;
+  background-color: #446644;
   &:hover {
     opacity: 0.9;
     background-color: #449944;
@@ -28,7 +29,7 @@ const Button = styled(Link)`
 `;
 
 const StyledImage = styled.img`
-  width: 1184px;
+  width: 980px;
 `;
 
 const ShelfMenu = props => (
