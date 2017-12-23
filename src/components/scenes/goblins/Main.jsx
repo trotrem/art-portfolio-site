@@ -29,7 +29,7 @@ const TreeScroll = styled.div`
 
 const TreeButton = styled.div`
   background-image: url(${buttons});
-  background-position: center;
+  margin: 0 auto;
   width: 527px;
   height: 407px;
 `;

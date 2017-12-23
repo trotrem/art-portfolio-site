@@ -6,7 +6,7 @@ import ShelfMenu from "./ShelfMenu.jsx"
 const Container = styled.div`
   position: relative;
   background-color: #898989;
-  height: 500vh;
+  height: 200vh;
   overflow: hidden;
 `;
 
@@ -15,7 +15,7 @@ const Tontainer = styled.div`
   top: 1080px;
   left: 0px;
   background-color: #898ff9;
-  height: 500vh;
+  height: calc(100% - 1080px);
   width:100%;
 `;
 
