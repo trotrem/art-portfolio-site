@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Parallax, Background } from "react-parallax";
+import Plx from "../../common/Parallax";
 import tree from "./img/plxLayers/3.png";
 import scroll from "./img/plxLayers/3a.png";
 import buttons from "./img/plxLayers/3b.png";
@@ -15,18 +15,21 @@ const Container = styled.div`
 
 const Tree = styled.div`
   background-image: url(${tree});
+  background-position: center;
   height: 100%;
   width: 100%;
 `;
 
 const TreeScroll = styled.div`
   background-image: url(${scroll});
+  background-position: center;
   width: 100%;
   height: 100%;
 `;
 
 const TreeButton = styled.div`
   background-image: url(${buttons});
+  background-position: center;
   width: 527px;
   height: 407px;
 `;
@@ -43,16 +46,8 @@ const layerPath = "./img/plxLayers/";
 
 const MainPage = props => (
   <Container>
-    <StyledLayer>
-      <Parallax bgImage={require(layerPath + "1.png")} strength={700}>
-        <div style={{ height: 3360 }} />
-      </Parallax>
-    </StyledLayer>
-    <StyledLayer>
-      <Parallax bgImage={require(layerPath + "2.png")} strength={-200}>
-        <div style={{ height: 3360 }} />
-      </Parallax>
-    </StyledLayer>
+    <Plx image={require(layerPath + "1.png")} strength={700} height={3360}/>
+    <Plx image={require(layerPath + "2.png")} strength={-200} height={3360}/>
     <StyledLayer>
       <Tree>
         <TreeScroll>
@@ -60,16 +55,8 @@ const MainPage = props => (
         </TreeScroll>
       </Tree>
     </StyledLayer>
-    <StyledLayer>
-      <Parallax bgImage={require(layerPath + "4.png")} strength={100}>
-        <div style={{ height: 3360 }} />
-      </Parallax>
-    </StyledLayer>
-    <StyledLayer>
-      <Parallax bgImage={require(layerPath + "4a.png")} strength={100}>
-        <div style={{ height: 3360 }} />
-      </Parallax>
-    </StyledLayer>
+    <Plx image={require(layerPath + "4.png")} strength={100} height={3360}/>
+    <Plx image={require(layerPath + "4a.png")} strength={100} height={3360}/>
   </Container>
 );
 

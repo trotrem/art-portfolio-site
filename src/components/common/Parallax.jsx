@@ -6,21 +6,22 @@ const StyledLayer = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 1080px;
   width: 100%;
 `;
 
-const Plx = props => (
+const Plx = props => {
+  console.log(props.height);
+  return(
     <StyledLayer>
       <Parallax
         bgImage={props.image}
         bgStyle={{backgroundPosition: "center" }}
-        bgHeight="1080px"
+        bgHeight={props.height+"px"}
         strength={props.strength}
       >
-        <div style={{ height: 1080 }} />
+        <div style={{ height: props.height }} />
       </Parallax>
     </StyledLayer>
-  );
+  );}
 
 export default Plx;
