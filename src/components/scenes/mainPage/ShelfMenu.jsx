@@ -1,26 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../comic/img/banner.png";
+import mandy from "../comic/img/banner.png";
+import goblins from "../goblins/img/plxLayers/4a.png";
 import { Link } from "react-router-dom";
 
-const Pontainer = styled.div`
-position: relative;
-margin: auto;
-background-color: #f98ff9;
-top: 200px;
-height: calc(100% - 200px);
-width:100%;
-max-width:1200px;
+const Container = styled.div`
+  position: relative;
+  margin: auto;
+  background-color: #f98ff9;
+  top: 200px;
+  width: 100%;
+  max-width: 1200px;
 `;
 
 const Button = styled(Link)`
-display: block;
-maxWidth: 100%;
-color: white;
-&:hover{
-  opacity: 0.9;
-  cursor:pointer;
-}
+  display: block;
+  maxwidth: 100%;
+  height: 684px;
+  color: white;
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -29,11 +30,14 @@ const StyledImage = styled.img`
 `;
 
 const ShelfMenu = props => (
-  <Pontainer>
-    <Button to="/mandy">
-      <StyledImage src={banner}/>
+  <Container>
+    <Button to="/goblins">
+      <StyledImage src={goblins} />
     </Button>
-  </Pontainer>
+    <Button to="/mandy">
+      <StyledImage src={mandy} />
+    </Button>
+  </Container>
 );
 
 export default ShelfMenu;
