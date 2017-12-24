@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import glamorous from "glamorous";
-import Gallery from 'react-photo-gallery';
-import GalleryImage from './GalleryImage.jsx';
+import Gallery from "react-photo-gallery";
+import GalleryImage from "./GalleryImage.jsx";
 
 const photos = [
   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
