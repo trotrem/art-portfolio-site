@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Plx from "../../common/Parallax";
 import tree from "./img/plxLayers/3.png";
 import scroll from "./img/plxLayers/3a.png";
-import buttons from "./img/plxLayers/3b.png";
+import TreeButton from "./TreeButton.jsx"
 
 const Container = styled.div`
   position: relative;
@@ -24,17 +24,17 @@ const Tree = styled.div`
 `;
 
 const TreeScroll = styled.div`
+  position:relative;
+  top: 1200px;
   background-image: url(${scroll});
   background-position: center;
-  width: 100%;
-  height: 100%;
-`;
-
-const TreeButton = styled.div`
-  background-image: url(${buttons});
+  width: 582px;
+  height: 1844px;
   margin: 0 auto;
-  width: 527px;
-  height: 407px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const layerPath = "./img/plxLayers/";
@@ -45,11 +45,13 @@ const MainPage = props => (
     <Plx image={require(layerPath + "2.png")} strength={-200} height={3360} />
     <Tree>
       <TreeScroll>
-        <TreeButton />
+        <TreeButton to="/" >Book</TreeButton>
+        <TreeButton to="/" >Art</TreeButton>
+        <TreeButton to="/" >Home</TreeButton>
+        <TreeButton to="/" >About</TreeButton>
       </TreeScroll>
     </Tree>
     <Plx image={require(layerPath + "4.png")} strength={100} height={3360} />
-    <Plx image={require(layerPath + "4a.png")} strength={100} height={3360} />
   </Container>
 );
 

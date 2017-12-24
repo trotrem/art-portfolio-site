@@ -39,7 +39,6 @@ export default class GalleryPage extends Component {
 
   SetFocusedImage = (event, obj) => {
     this.setState({ focusedImageIndex: obj ? obj.index : null });
-    console.log(this.state.focusedImageIndex);
   };
 
   render() {
@@ -56,7 +55,7 @@ export default class GalleryPage extends Component {
               this.SetFocusedImage(e, null);
             }}
           >
-            <img src={photos[this.state.focusedImageIndex].src}/>
+            <img src={photos[this.state.focusedImageIndex].src} alt=""/>
           </BlockingBackground>
         ) : null}
       </div>

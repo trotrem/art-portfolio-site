@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import glamorous from "glamorous";
 import mandy from "../comic/img/banner.png";
 import goblins from "../goblins/img/plxLayers/4a.png";
 import { Link } from "react-router-dom";
@@ -7,12 +8,12 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   position: relative;
   margin: auto;
-  top: 100px;
+  top: 50px;
   width: 100%;
   max-width: 980px;
 `;
 
-const Button = styled(Link)`
+const DrawerButton = styled(Link)`
   display: flex;
   justify-content: center;
   max-width: 100%;
@@ -20,7 +21,7 @@ const Button = styled(Link)`
   border: 8px solid white;
   height: 480px;
   overflow: hidden;
-  margin: 0px 0 50px 0;
+  margin: 50px 0 0 0;
   background-color: #446644;
   &:hover {
     opacity: 0.9;
@@ -29,21 +30,46 @@ const Button = styled(Link)`
   }
 `;
 
-const StyledImage = styled.img`
-  flex:none;
+const FlexImage = styled.img`
+  flex: none;
+`;
+
+const BottomContainer = glamorous.div({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+const BottomButton = styled(Link)`
+  color: white;
+  border: 8px solid white;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  margin: 0px 30px 0px 30px;
+  background-color: #446644;
+  &:hover {
+    opacity: 0.9;
+    background-color: #449944;
+    cursor: pointer;
+  }
 `;
 
 const ShelfMenu = props => (
   <Container>
-    <Button to="/goblins">
-      <StyledImage src={goblins} style={{height:"2000px"}}/>
-    </Button>
-    <Button to="/mandy">
-      <StyledImage src={mandy} style={{height:"584px"}}/>
-    </Button>
-    <Button to="/gallery">
-      ART GALLERY
-    </Button>
+    <DrawerButton to="/goblins">
+      <FlexImage src={goblins} style={{ height: "2000px" }} />
+    </DrawerButton>
+    <DrawerButton to="/mandy">
+      <FlexImage src={mandy} style={{ height: "584px" }} />
+    </DrawerButton>
+    <DrawerButton to="/gallery">ART GALLERY</DrawerButton>
+    <BottomContainer>
+      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+    </BottomContainer>
   </Container>
 );
 
