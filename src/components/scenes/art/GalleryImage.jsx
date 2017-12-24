@@ -9,12 +9,10 @@ const cont = {
   position: 'relative'
 }
 
-const onClick = (photo) => {}
-
-const GalleryImage = ({ index, photo, margin }) => {
+const GalleryImage = ({ index, photo, onClick, margin }) => {
   return (
     <div style={{ margin, width: photo.width, ...cont }}>
-      <img {...photo} onClick={() => onClick(photo)} />
+      <img {...photo} onClick={(e) => onClick(e, { index, photo })} />
     </div>
   )
 };

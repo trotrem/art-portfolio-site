@@ -15,6 +15,51 @@ const photos = [
   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
 ];
 
-const GalleryPage = (props) => <Gallery photos={photos} ImageComponent={GalleryImage}/>
+const BlockingBackground = glamorous.div({
+  position: "fixed",
+  top: "0",
+  left: "0",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  cursor: "pointer",
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
 
-export default GalleryPage;
+export default class GalleryPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      focusedImageIndex: null
+    };
+  }
+
+  SetFocusedImage = (event, obj) => {
+    this.setState({ focusedImageIndex: obj ? obj.index : null });
+    console.log(this.state.focusedImageIndex);
+  };
+
+  render() {
+    return (
+      <div>
+        <Gallery
+          photos={photos}
+          ImageComponent={GalleryImage}
+          onClick={this.SetFocusedImage}
+        />
+        {this.state.focusedImageIndex !== null ? (
+          <BlockingBackground
+            onClick={e => {
+              this.SetFocusedImage(e, null);
+            }}
+          >
+            <img src={photos[this.state.focusedImageIndex].src}/>
+          </BlockingBackground>
+        ) : null}
+      </div>
+    );
+  }
+}
