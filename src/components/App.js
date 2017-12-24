@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Comic from "./scenes/comic/Main.jsx";
 import Home from "./scenes/mainPage/Main.jsx";
+import Gallery from "./scenes/art/Main.jsx";
 import Goblins from "./scenes/goblins/Main.jsx";
 import ScrollToTopRoute from "./common/ScrollToTopRoute.jsx";
 
@@ -27,6 +28,8 @@ class App extends Component {
             path="/goblins"
             render={() => <Goblins/>}
           />
+          <ScrollToTopRoute path="/gallery" 
+            render={() => <Gallery/>}/>
         </Switch>
       </BrowserRouter>
     );

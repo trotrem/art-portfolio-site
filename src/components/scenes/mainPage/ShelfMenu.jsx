@@ -39,7 +39,10 @@ const ShelfMenu = props => (
       <StyledImage src={goblins} style={{height:"2000px"}}/>
     </Button>
     <Button to="/mandy">
-      <StyledImage src={mandy} />
+      <StyledImage src={mandy} style={{height:"584px"}}/>
+    </Button>
+    <Button to="/gallery">
+      ART
     </Button>
   </Container>
 );
