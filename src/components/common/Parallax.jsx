@@ -18,7 +18,7 @@ const Plx = props => {
         bgHeight={props.height+"px"}
         strength={props.strength}
       >
-        <div style={{ height: props.height }} />
+        <div style={{ height: (props.divHeight ? props.divHeight : props.height) }} />
       </Parallax>
     </StyledLayer>
   );}
