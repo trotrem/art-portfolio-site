@@ -16,13 +16,6 @@ const PageContainer = glamorous.div({
   overflow: "hidden"
 });
 
-const ShelfContainer = glamorous.div({
-  position: "absolute",
-  top: divHeight.toString(),
-  left: "0px",
-  width: "100%",
-});
-
 const ShelfLayer = glamorous.div({
   position: "absolute",
   top: "0px",
@@ -31,6 +24,13 @@ const ShelfLayer = glamorous.div({
   height: "100%",
   backgroundImage:"url("+shelf+")",
   backgroundPosition:"center"
+});
+
+const ShelfContainer = glamorous.div({
+  position: "absolute",
+  top: divHeight.toString(),
+  left: "0px",
+  width: "100%",
 });
 
 const MainPage = props => (
