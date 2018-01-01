@@ -10,7 +10,7 @@ import banner from "./img/banner.png";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 684px 50px 1fr;
+  grid-template-rows: 874px 50px 1fr;
   grid-template-areas: "banner" "navigation" "content";
   background-image: url(${background});
   background-attachment: fixed;

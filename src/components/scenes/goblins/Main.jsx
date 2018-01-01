@@ -51,7 +51,7 @@ const MainPage = props => (
         <TreeButton to="/" >About</TreeButton>
       </TreeScroll>
     </Tree>
-    <Plx image={require(layerPath + "4.png")} strength={100} height={3360} />
+    <Plx image={require(layerPath + "4.png")} strength={100} height={1078} divHeight={1250}/>
   </Container>
 );
 

@@ -36,7 +36,7 @@ const ShelfContainer = glamorous.div({
 const MainPage = props => (
   <PageContainer >
     <div style={{height:imageHeight}}/>
-    <Plx image={require(layerPath + "1.png")} strength={700} height={1691} divHeight={divHeight}/>
+    <Plx image={require(layerPath + "1.png")} strength={800} height={1691} divHeight={divHeight}/>
     <Plx image={require(layerPath + "2.png")} strength={600} height={1397} divHeight={divHeight}/>
     <Plx image={require(layerPath + "3.png")} strength={300} height={1401} divHeight={divHeight}/>
     <Plx image={require(layerPath + "4.png")} strength={200} height={1677} divHeight={divHeight}/>

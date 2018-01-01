@@ -8,7 +8,7 @@ const Nav = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "a a a a";
   height: 50px;
-  background-color: #447093;
+  background-color: #000000;
   align-items: center;
   justify-items: center;
 `;

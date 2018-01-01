@@ -35,6 +35,8 @@ const FlexImage = styled.img`
 `;
 
 const BottomContainer = glamorous.div({
+  position: "relative",
+  top: "30px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center"
