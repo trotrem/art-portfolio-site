@@ -10,44 +10,44 @@ const photos = [
     height: 891
   },
   {
-    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-    width: 1,
-    height: 1
+    src: "https://orig00.deviantart.net/9604/f/2017/324/c/2/sword_in_stone_by_themirandachick-dbucbp8.png",
+    width: 693,
+    height: 736
   },
   {
-    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-    width: 3,
-    height: 4
+    src: "https://orig00.deviantart.net/a328/f/2017/321/9/1/0_ric_the_wizard_by_themirandachick-dbu1yhi.png",
+    width: 590,
+    height: 622
   },
   {
-    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-    width: 3,
-    height: 4
+    src: "https://pre00.deviantart.net/ad30/th/pre/f/2017/275/b/9/joker_by_themirandachick-dbpb3es.png",
+    width: 497,
+    height: 768
   },
   {
-    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-    width: 3,
-    height: 4
+    src: "https://orig00.deviantart.net/38b9/f/2017/274/0/b/linky_by_themirandachick-dbp60yw.png",
+    width: 675,
+    height: 768
   },
   {
-    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-    width: 4,
-    height: 3
+    src: "https://img00.deviantart.net/b730/i/2017/033/7/c/papillon_by_themirandachick-daxooyd.png",
+    width: 563,
+    height: 768
   },
   {
-    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-    width: 3,
-    height: 4
+    src: "https://img00.deviantart.net/a6b1/i/2017/026/d/0/to_wander_by_themirandachick-dawuiex.png",
+    width: 521,
+    height: 768
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-    width: 4,
-    height: 3
+    src: "https://img00.deviantart.net/65f2/i/2016/352/8/d/mandy_by_themirandachick-das1qyt.png",
+    width: 600,
+    height: 734
   },
   {
-    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-    width: 4,
-    height: 3
+    src: "https://img00.deviantart.net/0704/i/2016/339/1/2/waiting_for_the_next_round_by_themirandachick-daqepgp.png",
+    width: 600,
+    height: 730
   }
 ];
 
