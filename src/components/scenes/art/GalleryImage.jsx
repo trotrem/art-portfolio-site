@@ -11,7 +11,7 @@ const cont = {
 const GalleryImage = ({ index, photo, onClick, margin }) => {
   return (
     <div style={{ margin, width: photo.width, ...cont }}>
-      <img {...photo} onClick={(e) => onClick(e, index)} alt=""/>
+      <img {...photo} onClick={(e) => onClick(e, {photo, index})} alt=""/>
     </div>
   )
 };

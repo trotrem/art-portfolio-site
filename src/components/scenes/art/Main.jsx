@@ -5,9 +5,9 @@ import GalleryImage from "./GalleryImage.jsx";
 
 const photos = [
   {
-    src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-    width: 4,
-    height: 3
+    src: "https://pre00.deviantart.net/549b/th/pre/f/2017/346/f/6/fairy_by_themirandachick-dbwia3p.png",
+    width: 749,
+    height: 891
   },
   {
     src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
@@ -73,8 +73,8 @@ export default class GalleryPage extends Component {
     };
   }
 
-  SetFocusedImage = (event, index) => {
-    this.setState({ focusedImageIndex: index });
+  SetFocusedImage = (event, obj) => {
+    this.setState({ focusedImageIndex: obj? obj.index:null });
   };
 
   render() {
@@ -95,10 +95,6 @@ export default class GalleryPage extends Component {
             <img
               src={photos[this.state.focusedImageIndex].src}
               alt=""
-              onClick={e => {
-                let i = this.state.focusedImageIndex + 1;
-                this.SetFocusedImage(e, i);
-              }}
             />
           </BlockingBackground>
         ) : null}
