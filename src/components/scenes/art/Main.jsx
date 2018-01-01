@@ -75,7 +75,6 @@ export default class GalleryPage extends Component {
 
   SetFocusedImage = (event, obj) => {
     this.setState({ focusedImageIndex: obj? obj.index:null });
-    console.log("click");
   };
 
   render() {
@@ -83,6 +82,8 @@ export default class GalleryPage extends Component {
       <div>
         <Gallery
           photos={photos}
+          columns={4}
+          margin={2}
           ImageComponent={GalleryImage}
           onClick={this.SetFocusedImage}
         />
