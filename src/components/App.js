@@ -4,7 +4,7 @@ import Comic from "./scenes/comic/Main.jsx";
 import Home from "./scenes/mainPage/Main.jsx";
 import Gallery from "./scenes/art/Main.jsx";
 import Goblins from "./scenes/goblins/Main.jsx";
-import ScrollToTopRoute from "./common/ScrollToTopRoute.jsx";
+import withScrollToTop from "./common/ScrollToTop.jsx";
 
 // Resolution Parameters
 /*
@@ -17,25 +17,22 @@ const comicResolutions = [
 class App extends Component {
   render() {
     return (
-      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
+      <BrowserRouter>
         <Switch>
-          <ScrollToTopRoute path="/" exact={true} component={Home}/>
+          <Route path="/" exact={true} component={withScrollToTop(Home)}/>
           <Route
             path="/mandy"
             render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}
           />
-          <ScrollToTopRoute
+          <Route
             path="/goblins"
-            render={() => <Goblins/>}
+            component={withScrollToTop(Goblins)}
           />
-          <ScrollToTopRoute path="/gallery" 
-            render={() => <Gallery/>}/>
+          <Route path="/gallery" 
+            component={withScrollToTop(Gallery)}/>
         </Switch>
       </BrowserRouter>
     );
-  }
-  componentDidMount() {
-    document.title = "Miranda's dumb website (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧";
   }
 }
 
