@@ -42,20 +42,20 @@ const BottomContainer = glamorous.div({
   alignItems: "center"
 });
 
-const BottomButton = styled(Link)`
-  color: white;
-  border: 8px solid white;
-  height: 150px;
-  width: 150px;
-  overflow: hidden;
-  margin: 0px 30px 0px 30px;
-  background-color: #446644;
-  &:hover {
-    opacity: 0.9;
-    background-color: #449944;
-    cursor: pointer;
+const BottomButton = glamorous.a({
+  color: "white",
+  border: "8px solid white",
+  height: "150px",
+  width: "150px",
+  overflow: "hidden",
+  margin: "0px 30px 0px 30px",
+  backgroundColor: "#446644",
+  ':hover': {
+    opacity: 0.9,
+    backgroundColor: "#449944",
+    cursor: "pointer"
   }
-`;
+})
 
 const ShelfMenu = props => (
   <Container>
@@ -67,10 +67,10 @@ const ShelfMenu = props => (
     </DrawerButton>
     <DrawerButton to="/gallery">ART GALLERY</DrawerButton>
     <BottomContainer>
-      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton to=""><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton href="https://themirandachick.deviantart.com/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton href="https://themirandachick.tumblr.com/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton href="mailto:eastwoodmiranda@gmail.com"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
     </BottomContainer>
   </Container>
 );
