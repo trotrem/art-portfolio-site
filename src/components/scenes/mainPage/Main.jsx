@@ -10,6 +10,8 @@ const imageHeight = 3839;
 
 const divHeight = 1919;
 
+const titleHeight = 1840;
+
 const PageContainer = glamorous.div({
   position: "relative",
   backgroundColor: "#898989",
@@ -37,67 +39,45 @@ var autoScroll;
 
 const scrollAtBegining = () =>
 {
-    let x = 10 * window.scrollY / (divHeight - window.innerHeight);
+    let x = 10 * window.scrollY / (titleHeight - window.innerHeight);
     let scrollValue = -0.2 * Math.pow(x - 5, 2) + 8;
-    console.log(scrollValue);
     window.scrollBy(0, scrollValue);
-    if (window.scrollY + window.innerHeight >= divHeight) {
+    if (window.scrollY + window.innerHeight >= titleHeight) {
       clearInterval(autoScroll);
     }
 }
 
 export default class MainPage extends Component {
   componentDidMount() {
-    autoScroll = setInterval(scrollAtBegining, 10);
+    let hash = this.props.location.hash;
+    setTimeout(function () {
+      if(hash){
+          window.scrollTo(0, titleHeight - window.innerHeight);
+      }
+      else{
+        window.scrollTo(0, 0);
+        autoScroll = setInterval(scrollAtBegining, 10);
+      }
+    },40);
   }
 
   componentWillUnmount() {
     clearInterval(autoScroll);
   }
 
-  render() {
+  render(){
     return (
-      <PageContainer>
-        <div style={{ height: imageHeight, backgroundColor: "#252525" }} />
-        <Plx
-          image={require(layerPath + "1.png")}
-          strength={800}
-          height={1691}
-          divHeight={divHeight}
-        />
-        <Plx
-          image={require(layerPath + "2.png")}
-          strength={600}
-          height={1397}
-          divHeight={divHeight}
-        />
-        <Plx
-          image={require(layerPath + "3.png")}
-          strength={300}
-          height={1401}
-          divHeight={divHeight}
-        />
-        <Plx
-          image={require(layerPath + "4.png")}
-          strength={200}
-          height={1677}
-          divHeight={divHeight}
-        />
-        <Plx
-          image={require(layerPath + "5.png")}
-          strength={100}
-          height={1663}
-          divHeight={divHeight}
-        />
-        <ShelfLayer />
-        <Plx
-          image={require(layerPath + "7.png")}
-          strength={-30}
-          height={1919}
-          divHeight={divHeight}
-        />
+      <PageContainer >
+        <div style={{height:imageHeight, backgroundColor:"#252525"}}/>
+        <Plx image={require(layerPath + "1.png")} strength={800} height={1691} divHeight={divHeight}/>
+        <Plx image={require(layerPath + "2.png")} strength={600} height={1397} divHeight={divHeight}/>
+        <Plx image={require(layerPath + "3.png")} strength={300} height={1401} divHeight={divHeight}/>
+        <Plx image={require(layerPath + "4.png")} strength={200} height={1677} divHeight={divHeight}/>
+        <Plx image={require(layerPath + "5.png")} strength={100} height={1663} divHeight={divHeight}/>
+        <ShelfLayer/>
+        <Plx image={require(layerPath + "7.png")} strength={-30} height={1919} divHeight={divHeight}/>
         <ShelfContainer>
-          <ShelfMenu />
+          <ShelfMenu/>
         </ShelfContainer>
       </PageContainer>
     );

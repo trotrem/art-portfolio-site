@@ -45,10 +45,10 @@ const MainPage = props => (
     <Plx image={require(layerPath + "2.png")} strength={-200} height={3360} />
     <Tree>
       <TreeScroll>
-        <TreeButton to="/" >Book</TreeButton>
-        <TreeButton to="/" >Art</TreeButton>
-        <TreeButton to="/" >Home</TreeButton>
-        <TreeButton to="/" >About</TreeButton>
+        <TreeButton to="/#title" >Book</TreeButton>
+        <TreeButton to="/#title" >Art</TreeButton>
+        <TreeButton to="/#title" >Home</TreeButton>
+        <TreeButton to="/#title" >About</TreeButton>
       </TreeScroll>
     </Tree>
     <Plx image={require(layerPath + "4.png")} strength={100} height={1078} divHeight={1250}/>

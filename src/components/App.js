@@ -14,7 +14,6 @@ const comicResolutions = [
 ]
 */
 
-const EnhancedHome = withScrollToTop(Home);
 const EnhancedGoblins = withScrollToTop(Goblins);
 const EnhancedGallery = withScrollToTop(Gallery);
 
@@ -23,7 +22,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact={true} component={EnhancedHome}/>
+          <Route path="/" exact={true} component={Home}/>
           <Route
             path="/mandy"
             render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}

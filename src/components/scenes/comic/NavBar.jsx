@@ -20,10 +20,10 @@ const NavButton = styled(Button)`
 const NavBar = (props) => {
   return (
     <Nav>
-      <NavButton to="/">Home</NavButton>
-      <NavButton to="/">Euh...</NavButton>
-      <NavButton to="/">What else?</NavButton>
-      <NavButton to="/">About!</NavButton>
+      <NavButton to="/#title">Home</NavButton>
+      <NavButton to="/#title">Euh...</NavButton>
+      <NavButton to="/#title">What else?</NavButton>
+      <NavButton to="/#title">About!</NavButton>
     </Nav>
   );
 };
