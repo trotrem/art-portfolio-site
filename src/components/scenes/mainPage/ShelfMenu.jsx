@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 import mandy from "../comic/img/banner.png";
 import goblins from "../goblins/img/plxLayers/4a.png";
 import { Link } from "react-router-dom";
 
-const Container = styled.div`
+const Container = styled("div")`
   position: relative;
   margin: auto;
   top: 50px;
@@ -30,32 +29,32 @@ const DrawerButton = styled(Link)`
   }
 `;
 
-const FlexImage = styled.img`
+const FlexImage = styled("img")`
   flex: none;
 `;
 
-const BottomContainer = glamorous.div({
-  position: "relative",
-  top: "30px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center"
-});
+const BottomContainer = styled("div")`
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
-const BottomButton = glamorous.a({
-  color: "white",
-  border: "8px solid white",
-  height: "150px",
-  width: "150px",
-  overflow: "hidden",
-  margin: "0px 30px 0px 30px",
-  backgroundColor: "#446644",
-  ':hover': {
-    opacity: 0.9,
-    backgroundColor: "#449944",
-    cursor: "pointer"
+const BottomButton = styled("a")`
+  color: white;
+  border: 8px solid white;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  margin: 0px 30px 0px 30px;
+  background-color: #446644;
+  &:hover {
+    opacity: 0.9;
+    background-color: #449944;
+    cursor: pointer;
   }
-})
+`
 
 const ShelfMenu = props => (
   <Container>

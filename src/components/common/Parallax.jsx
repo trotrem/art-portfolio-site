@@ -1,8 +1,8 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-import styled from "styled-components";
+import styled from "react-emotion";
 
-const StyledLayer = styled.div`
+const StyledLayer = styled("div")`
   position: absolute;
   top: 0px;
   left: 0px;

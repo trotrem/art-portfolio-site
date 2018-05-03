@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 import { Link } from "react-router-dom";
 import background from "./img/plxLayers/3b.png";
 
