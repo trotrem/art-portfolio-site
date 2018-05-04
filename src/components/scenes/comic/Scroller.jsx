@@ -39,7 +39,7 @@ const Scroller = props => {
                 height={height}
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
-                rowCount={28}
+                rowCount={props.maxPages}
                 rowHeight={heightCalculator(props.resolution[0], props.resolution[1], width)}
                 rowRenderer={rowRenderer(props.resolution[2])}
                 scrollTop={scrollTop}

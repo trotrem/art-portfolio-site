@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Comic from "./scenes/comic/Main.jsx";
+import Comic from "./scenes/comic/ComicContainer.jsx";
 import Home from "./scenes/mainPage/Main.jsx";
 import Gallery from "./scenes/art/Main.jsx";
 import Goblins from "./scenes/goblins/Main.jsx";
@@ -31,7 +31,7 @@ class App extends Component {
             path="/goblins"
             component={EnhancedGoblins}
           />
-          <Route path="/gallery" 
+          <Route path="/gallery"
             component={EnhancedGallery}/>
         </Switch>
       </BrowserRouter>

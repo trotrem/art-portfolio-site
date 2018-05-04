@@ -35,6 +35,17 @@ const ShelfContainer = styled("div")`
   width: 100%;
 `
 
+var autoScroll;
+
+const scrollAtBegining = () => {
+    let x = 10 * window.scrollY / (titleHeight - window.innerHeight);
+    let scrollValue = -0.2 * Math.pow(x - 5, 2) + 8;
+    window.scrollBy(0, scrollValue);
+    if (window.scrollY + window.innerHeight >= titleHeight) {
+        clearInterval(autoScroll);
+    }
+}
+
 export default class MainPage extends Component {
 
     componentDidMount() {
@@ -45,22 +56,13 @@ export default class MainPage extends Component {
             }
             else{
                 window.scrollTo(0, 0);
-                this.autoScroll = setInterval(this.scrollAtBegining, 10);
+                autoScroll = setInterval(scrollAtBegining, 10);
             }
         },40);
     }
 
     componentWillUnmount() {
-        clearInterval(this.autoScroll);
-    }
-
-    scrollAtBegining() {
-        let x = 10 * window.scrollY / (titleHeight - window.innerHeight);
-        let scrollValue = -0.2 * Math.pow(x - 5, 2) + 8;
-        window.scrollBy(0, scrollValue);
-        if (window.scrollY + window.innerHeight >= titleHeight) {
-            clearInterval(this.autoScroll);
-        }
+        clearInterval(autoScroll);
     }
 
     render(){
