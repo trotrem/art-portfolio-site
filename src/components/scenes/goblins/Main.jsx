@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 import Plx from "../../common/Parallax";
 import tree from "./img/plxLayers/3.png";
 import scroll from "./img/plxLayers/3a.png";
 import TreeButton from "./TreeButton.jsx"
 
-const Container = styled.div`
+const Container = styled("div")`
   position: relative;
   background-color: #898989;
   height: 3360px;
@@ -13,7 +13,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Tree = styled.div`
+const Tree = styled("div")`
   position: absolute;
   top: 0px;
   left: 0px;
@@ -23,7 +23,7 @@ const Tree = styled.div`
   width: 100%;
 `;
 
-const TreeScroll = styled.div`
+const TreeScroll = styled("div")`
   position:relative;
   top: 1200px;
   background-image: url(${scroll});

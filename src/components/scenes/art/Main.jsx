@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import glamorous from "glamorous";
 import Gallery from "react-photo-gallery";
 import GalleryImage from "./GalleryImage.jsx";
+import styled from "react-emotion";
 
 const photos = [
   {
@@ -51,18 +51,18 @@ const photos = [
   }
 ];
 
-const BlockingBackground = glamorous.div({
-  position: "fixed",
-  top: "0",
-  left: "0",
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
-  cursor: "pointer",
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center"
-});
+const BlockingBackground = styled("div")`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export default class GalleryPage extends Component {
   constructor(props) {

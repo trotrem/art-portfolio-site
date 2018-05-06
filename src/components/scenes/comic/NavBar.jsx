@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 import Button from "./NavButton.jsx"
 
-const Nav = styled.div`
+const Nav = styled("div")`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);

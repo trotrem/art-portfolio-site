@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 import { List, AutoSizer, WindowScroller } from "react-virtualized";
 
-const ComicPage = styled.img`
+const ComicPage = styled("img")`
   max-width: 100%;
   border: 10px solid black;
 `;
@@ -39,7 +39,7 @@ const Scroller = props => {
                 height={height}
                 isScrolling={isScrolling}
                 onScroll={onChildScroll}
-                rowCount={28}
+                rowCount={props.maxPages}
                 rowHeight={heightCalculator(props.resolution[0], props.resolution[1], width)}
                 rowRenderer={rowRenderer(props.resolution[2])}
                 scrollTop={scrollTop}
