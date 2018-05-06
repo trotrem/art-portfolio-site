@@ -15,7 +15,7 @@ export default class ComicContainer extends Component {
         this.setState({isLoading: true});
         getMandyMaxPages().then(result => {
             this.setState({isLoading: false, maxPages: result.data.maxPages});
-        }).catch(() => console.error("problem with the server connection"));
+        }).catch((err) => console.error("comm error - " + err));
     }
 
     render() {
