@@ -1,0 +1,11 @@
+* Website
+** TODO payment button
+** TODO scheduler
+- [X] config file (JSON number + (timestamp + num) list
+- [X] react logic
+- [X] express logic
+- [ ] security
+** TODO publishing
+- [ ] finding way
+- [ ] doit
+** TODO notifications
