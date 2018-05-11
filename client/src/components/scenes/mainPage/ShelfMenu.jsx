@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
 import mandy from "../comic/img/banner.png";
-import goblins from "../goblins/img/plxLayers/4a.png";
 import { Link } from "react-router-dom";
 
 const Container = styled("div")`
@@ -59,7 +58,7 @@ const BottomButton = styled("a")`
 const ShelfMenu = props => (
   <Container>
     <DrawerButton to="/goblins">
-      <FlexImage src={goblins} style={{ height: "2000px" }} />
+      <h1>goblins!</h1>
     </DrawerButton>
     <DrawerButton to="/mandy">
       <FlexImage src={mandy} style={{ height: "584px" }} />
