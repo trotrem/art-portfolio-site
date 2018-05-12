@@ -8,22 +8,18 @@ const Container = styled("div")`
   margin: auto;
   top: 50px;
   width: 100%;
-  max-width: 980px;
+  max-width: 1100px;
 `;
 
 const DrawerButton = styled(Link)`
   display: flex;
   justify-content: center;
   max-width: 100%;
-  color: white;
-  border: 8px solid white;
   height: 480px;
   overflow: hidden;
   margin: 50px 0 0 0;
-  background-color: #446644;
   &:hover {
     opacity: 0.9;
-    background-color: #449944;
     cursor: pointer;
   }
 `;
@@ -34,41 +30,38 @@ const FlexImage = styled("img")`
 
 const BottomContainer = styled("div")`
   position: relative;
-  top: 30px;
+  top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+  margin-left: -10px;
+  margin-right: -10px;
+`;
 
 const BottomButton = styled("a")`
   color: white;
-  border: 8px solid white;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
   overflow: hidden;
-  margin: 0px 30px 0px 30px;
-  background-color: #446644;
+  margin: 0px 50px 0px 50px;
   &:hover {
     opacity: 0.9;
-    background-color: #449944;
     cursor: pointer;
   }
-`
+`;
 
 const ShelfMenu = props => (
   <Container>
-    <DrawerButton to="/goblins">
-      <h1>goblins!</h1>
-    </DrawerButton>
     <DrawerButton to="/mandy">
-      <FlexImage src={mandy} style={{ height: "584px" }} />
     </DrawerButton>
-    <DrawerButton to="/gallery">ART GALLERY</DrawerButton>
+    <DrawerButton to="/goblins">
+    </DrawerButton>
+    <DrawerButton to="/gallery"></DrawerButton>
     <BottomContainer>
-      <BottomButton href="https://themirandachick.deviantart.com/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton href="https://themirandachick.tumblr.com/"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
-      <BottomButton href="mailto:eastwoodmiranda@gmail.com"><FlexImage src={mandy} style={{ height: "150px" }} /></BottomButton>
+      <BottomButton href="https://themirandachick.tumblr.com/"></BottomButton>
+      <BottomButton href="https://themirandachick.deviantart.com/"></BottomButton>
+      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/"></BottomButton>
+      <BottomButton href="mailto:eastwoodmiranda@gmail.com"></BottomButton>
     </BottomContainer>
   </Container>
 );
