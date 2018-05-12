@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
 import Plx from "../../common/Parallax";
-import background from "./img/redBackground.png";
 import frame from "./img/FrameTitle.png";
 import blueGradient from "./img/blueGradient.png"
 
@@ -9,7 +8,6 @@ const imgPath = "./img/";
 
 const Container = styled("div")`
   position: relative;
-  background-image: url(${background});
   background-repeat: repeat;
   height: 200%;
   width: 100%;
