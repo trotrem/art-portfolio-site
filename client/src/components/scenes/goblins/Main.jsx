@@ -2,7 +2,6 @@ import React from "react";
 import styled from "react-emotion";
 import Plx from "../../common/Parallax";
 import frame from "./img/FrameTitle.png";
-import blueGradient from "./img/blueGradient.png"
 
 const imgPath = "./img/";
 
@@ -28,8 +27,8 @@ const Frame = styled("div")`
 const BlueGradient = styled("div")`
   height: 100%;
   width: 100%;
-  background-image: url(${blueGradient});
-  background-size: 100% 100%;
+  /* Permalink - use to edit gradient http://colorzilla.com/gradient-editor/#000203+0,000408+14,00080e+19,02141f+30,052438+41,06263a+45,052438+45,052438+55,052236+56,052234+61,041d2d+69,010e17+83,000104+92,000201+92,000000+100 */
+  background: linear-gradient(to bottom, #000203 0%,#000408 14%,#00080e 19%,#02141f 30%,#052438 41%,#06263a 45%,#052438 45%,#052438 55%,#052236 56%,#052234 61%,#041d2d 69%,#010e17 83%,#000104 92%,#000201 92%,#000000 100%);
 `
 
 const Scroll = styled("img")`
