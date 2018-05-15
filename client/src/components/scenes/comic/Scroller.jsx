@@ -11,7 +11,7 @@ const heightCalculator = (widthSetting, heightSetting, currentWidth) => {
   return heightSetting / widthSetting * currentWidth;
 }
 
-function rowRenderer(folder) {
+function rowRenderer(folder, maxPages) {
   return function({ key, index, style }) {
     return (
       <div key={key} style={style}>
@@ -19,7 +19,7 @@ function rowRenderer(folder) {
           src={require("./img/" +
             folder +
             "/" +
-            (index % 28 + 1) +
+            (index % maxPages + 1) +
             ".png")}
         />
       </div>
@@ -41,7 +41,7 @@ const Scroller = props => {
                 onScroll={onChildScroll}
                 rowCount={props.maxPages}
                 rowHeight={heightCalculator(props.resolution[0], props.resolution[1], width)}
-                rowRenderer={rowRenderer(props.resolution[2])}
+                rowRenderer={rowRenderer(props.resolution[2], props.maxPages)}
                 scrollTop={scrollTop}
                 width={width}
                 scrollToIndex={props.pageNum - 1}
