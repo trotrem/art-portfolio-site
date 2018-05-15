@@ -5,19 +5,19 @@ import styled from "react-emotion";
 
 const photos = [
   {
-    src: "https://pre00.deviantart.net/549b/th/pre/f/2017/346/f/6/fairy_by_themirandachick-dbwia3p.png",
-    width: 749,
-    height: 891
+    src: "https://img00.deviantart.net/3e1b/i/2016/314/6/0/master_by_themirandachick-danw7bm.png",
+    width: 600,
+    height: 898
   },
   {
-    src: "https://orig00.deviantart.net/9604/f/2017/324/c/2/sword_in_stone_by_themirandachick-dbucbp8.png",
-    width: 693,
-    height: 736
+    src: "https://img00.deviantart.net/2d99/i/2016/299/e/d/inktober_25___weight_of_splendor_by_themirandachick-dambgav.png",
+    width: 400,
+    height: 573
   },
   {
-    src: "https://orig00.deviantart.net/a328/f/2017/321/9/1/0_ric_the_wizard_by_themirandachick-dbu1yhi.png",
-    width: 590,
-    height: 622
+    src: "https://img00.deviantart.net/e68d/i/2016/325/0/0/crossfire_by_themirandachick-daoxyfu.png",
+    width: 600,
+    height: 763
   },
   {
     src: "https://pre00.deviantart.net/ad30/th/pre/f/2017/275/b/9/joker_by_themirandachick-dbpb3es.png",
@@ -25,19 +25,19 @@ const photos = [
     height: 768
   },
   {
-    src: "https://orig00.deviantart.net/38b9/f/2017/274/0/b/linky_by_themirandachick-dbp60yw.png",
-    width: 675,
-    height: 768
+    src: "https://img00.deviantart.net/c83e/i/2016/328/5/9/enter_darkness_by_themirandachick-dapeigs.png",
+    width: 600,
+    height: 832
   },
   {
-    src: "https://img00.deviantart.net/b730/i/2017/033/7/c/papillon_by_themirandachick-daxooyd.png",
-    width: 563,
-    height: 768
+    src: "https://img00.deviantart.net/0b5e/i/2016/301/5/6/inktober_27___the_bigger_bite_by_themirandachick-damk8lj.png",
+    width: 600,
+    height: 610
   },
   {
-    src: "https://img00.deviantart.net/a6b1/i/2017/026/d/0/to_wander_by_themirandachick-dawuiex.png",
-    width: 521,
-    height: 768
+    src: "https://img00.deviantart.net/05c8/i/2018/016/9/4/space_mercenary_by_themirandachick-dc07mgo.png",
+    width: 800,
+    height: 1083
   },
   {
     src: "https://img00.deviantart.net/65f2/i/2016/352/8/d/mandy_by_themirandachick-das1qyt.png",
@@ -48,6 +48,16 @@ const photos = [
     src: "https://img00.deviantart.net/0704/i/2016/339/1/2/waiting_for_the_next_round_by_themirandachick-daqepgp.png",
     width: 600,
     height: 730
+  },
+  {
+    src: "https://img00.deviantart.net/be9a/i/2016/313/c/a/solar_workings_by_themirandachick-danv8cx.png",
+    width: 600,
+    height: 619
+  },
+  {
+    src: "https://img00.deviantart.net/c1fa/i/2016/323/7/9/cosmodaunt_by_themirandachick-daou4yw.png",
+    width: 600,
+    height: 959
   }
 ];
 
