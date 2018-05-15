@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "react-emotion";
 import Plx from "../../common/Parallax";
-import frame from "./img/FrameTitle.png";
+import frame from "./img/Frame.gif";
+import scrollPattern from "./img/scrollPattern.gif"
 
 const imgPath = "./img/";
 
@@ -31,12 +32,25 @@ const BlueGradient = styled("div")`
   background: linear-gradient(to bottom, #000203 0%,#000408 14%,#00080e 19%,#02141f 30%,#052438 41%,#06263a 45%,#052438 45%,#052438 55%,#052236 56%,#052234 61%,#041d2d 69%,#010e17 83%,#000104 92%,#000201 92%,#000000 100%);
 `
 
-const Scroll = styled("img")`
-    display: block;
+const Scroll = styled("div")`
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    height: 3384px;
 `;
+
+const ScrollTop = styled("img")`
+  width: 100%;
+  height: 58px;
+`
+
+const ScrollPattern = styled("div")`
+  background-image: url(${scrollPattern});
+  background-repeat: repeat-y;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+`
 
 const Stump = styled("img")`
   position: absolute;
@@ -81,7 +95,10 @@ const BuyButton = styled("img")`
 const MainPage = props => (
     <Container>
       <BlueGradient>
-        <Scroll src={require(imgPath + "Scroll.png")}></Scroll>
+        <Scroll>
+          <ScrollTop src={require(imgPath + "scrollTop.gif")}/>
+          <ScrollPattern/>
+        </Scroll>
         <Stump src={require(imgPath + "Stump.png")}/>
         <Content>
           <PreviewFormats>
