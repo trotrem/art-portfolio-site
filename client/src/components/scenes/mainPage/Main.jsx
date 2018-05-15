@@ -69,9 +69,9 @@ export default class MainPage extends Component {
         return (
             <PageContainer >
                 <div style={{height:imageHeight, backgroundColor:"#252525"}}/>
-                <Plx image={require(layerPath + "1.gif")} strength={800} height={1691} divHeight={divHeight}/>
-                <Plx image={require(layerPath + "2.gif")} strength={600} height={1397} divHeight={divHeight}/>
-                <Plx image={require(layerPath + "4.gif")} strength={200} height={1677} divHeight={divHeight}/>
+                <Plx image={require(layerPath + "1.gif")} strength={800} height={1920} divHeight={divHeight}/>
+                <Plx image={require(layerPath + "2.gif")} strength={600} height={1423} divHeight={divHeight}/>
+                <Plx image={require(layerPath + "4.gif")} strength={200} height={1756} divHeight={divHeight}/>
                 <Plx image={require(layerPath + "5.gif")} strength={100} height={1663} divHeight={divHeight}/>
                 <ShelfLayer/>
                 <Plx image={require(layerPath + "7.gif")} strength={-30} height={1919} divHeight={divHeight}/>
