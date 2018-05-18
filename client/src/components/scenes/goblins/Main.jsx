@@ -82,6 +82,9 @@ const Content = styled("div")`
   padding-bottom: 60vw;
   text-align: center;
   font-family: MinionPro;
+  p {
+    font-size: 1.5em; /* 14px/16=0.875em */
+};
 `;
 
 const PreviewFormats = styled("div")`
@@ -125,10 +128,11 @@ const Preview = styled("div")`
 `
 
 const Buy = styled("div")`
-  margin-top: 5em;
+  margin-top: 8em;
 `
 
 const Author = styled("div")`
+margin-top: 6em;
 `
 
 const Link = styled("a")`
@@ -172,7 +176,7 @@ const MainPage = props => (
             <Buy>
               <h1>BUY THE BOOK</h1>
               <p>Paperbacks available on Amazon!</p>
-              <a href="https://www.amazon.com/Truth-About-Goblins-M-R-Eastwood-ebook">
+              <a href="https://www.books2read.com/thetruthaboutgoblins">
                 <BuyButton src={require(imgPath + "buy.png")}/>
               </a>
             </Buy>
