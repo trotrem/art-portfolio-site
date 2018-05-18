@@ -27,17 +27,20 @@ const Frame = styled("div")`
   top: 0;
   left: 0;
   box-sizing: border-box;
-  border: 200px solid transparent;
+  border: 15vw solid transparent;
   border-image: url(${frame}) 400 round;
   height: 100%;
   width: 100%;
+  z-index: -2;
 `
 
 const Scroll = styled("div")`
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     padding: 15% 0 0 0;
     width: 70%;
+    z-index: -3;
 `;
 
 const ScrollTop = styled("div")`
@@ -56,9 +59,11 @@ const ScrollPattern = styled("div")`
 `
 
 const Stump = styled("img")`
-  position: relative;
+  position: absolute;
   width: 100%;
-  bottom: 0px;
+  bottom: 4vw;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const Content = styled("div")`
@@ -110,6 +115,7 @@ const Author = styled("div")`
 const MainPage = props => (
   <Container>
     <BlueGradient>
+      <Frame/> 
       <Scroll>
         <Title src={require(imgPath + "Title.gif")}/>
         <ScrollTop/>
@@ -151,9 +157,9 @@ const MainPage = props => (
             </Author>
           </Content>
         </ScrollPattern>
+        <Stump src={require(imgPath + "BlackFog.png")}/>
         <Stump src={require(imgPath + "Stump.png")}/>
       </Scroll>
-      <Frame/> 
     </BlueGradient>
   </Container>
 );
