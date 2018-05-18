@@ -48,7 +48,7 @@ const ScrollTop = styled("div")`
   background-size: 100% 100%;
   margin: 5% 0 0 0;
   width: 100%;
-  height: 58px;
+  height: 314px;
 `
 
 const ScrollPattern = styled("div")`
@@ -158,7 +158,7 @@ const MainPage = props => (
           </Content>
         </ScrollPattern>
         <Stump src={require(imgPath + "BlackFog.png")}/>
-        <Stump src={require(imgPath + "Stump.png")}/>
+        <Stump src={require(imgPath + "Stump.gif")}/>
       </Scroll>
     </BlueGradient>
   </Container>
