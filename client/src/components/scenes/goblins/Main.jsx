@@ -17,8 +17,12 @@ const BlueGradient = styled("div")`
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  /* Permalink - use to edit gradient http://colorzilla.com/gradient-editor/#000203+0,000408+14,00080e+19,02141f+30,052438+41,06263a+45,052438+45,052438+55,052236+56,052234+61,041d2d+69,010e17+83,000104+92,000201+92,000000+100 */
-  background: linear-gradient(to bottom, #000203 0%,#000408 14%,#00080e 19%,#02141f 30%,#052438 41%,#06263a 45%,#052438 45%,#052438 55%,#052236 56%,#052234 61%,#041d2d 69%,#010e17 83%,#000104 92%,#000201 92%,#000000 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#010202+0,010404+3,03090a+7,19474b+35,1a4a4f+37,1a4a4f+41,153e42+48,040e0f+69,010404+75,000000+80,000000+100 */
+background: #010202; /* Old browsers */
+background: -moz-linear-gradient(top, #010202 0%, #010404 3%, #03090a 7%, #19474b 35%, #1a4a4f 37%, #1a4a4f 41%, #153e42 48%, #040e0f 69%, #010404 75%, #000000 80%, #000000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #010202 0%,#010404 3%,#03090a 7%,#19474b 35%,#1a4a4f 37%,#1a4a4f 41%,#153e42 48%,#040e0f 69%,#010404 75%,#000000 80%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #010202 0%,#010404 3%,#03090a 7%,#19474b 35%,#1a4a4f 37%,#1a4a4f 41%,#153e42 48%,#040e0f 69%,#010404 75%,#000000 80%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#010202', endColorstr='#000000',GradientType=0 ); /* IE6-9 *
 `
 
 const Frame = styled("div")`
