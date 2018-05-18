@@ -9,3 +9,8 @@ body {
 
 #root {
 }
+
+@font-face {
+  font-family: 'MinionPro';
+  src: url('./fonts/MinionPro-Regular.woff');
+}

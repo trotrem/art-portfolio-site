@@ -14,7 +14,7 @@ const Button = styled(Link)`
   border: 2px solid white;
   &:hover{
 		background-color: palevioletred;
-        cursor:pointer;
+    cursor:pointer;
 	}
 `;
 

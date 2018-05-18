@@ -57,6 +57,15 @@ const ScrollPattern = styled("div")`
   width: 100%;
 `
 
+const BlackFog = styled("img")`
+  position: absolute;
+  width: 100%;
+  bottom: 4vw;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+`
+
 const Stump = styled("img")`
   position: absolute;
   width: 100%;
@@ -66,12 +75,11 @@ const Stump = styled("img")`
 `
 
 const Content = styled("div")`
-  width: 80%;
+  width: 75%;
   margin: 0 auto 0 auto;
   padding-bottom: 60vw;
-  padding-top: 5vw;
   text-align: center;
-  
+  font-family: MinionPro;
 `;
 
 const PreviewFormats = styled("div")`
@@ -82,6 +90,9 @@ const PreviewFormats = styled("div")`
 
 const FormatImage = styled("img")`
   width: 100%;
+  &:hover{
+    filter: brightness(105%);
+  }
 `;
 
 const ClickToDownload = styled("img")`
@@ -93,6 +104,9 @@ const BuyButton = styled("img")`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  &:hover{
+    filter: brightness(120%);
+  }
 `
 
 const Title = styled("img")`
@@ -105,12 +119,18 @@ const About = styled("div")`
 `
 
 const Preview = styled("div")`
+  margin-top: 5em;
 `
 
 const Buy = styled("div")`
+  margin-top: 5em;
 `
 
 const Author = styled("div")`
+`
+
+const Link = styled("a")`
+  color: black;
 `
 
 const MainPage = props => (
@@ -158,13 +178,12 @@ const MainPage = props => (
               <h1>
                 ABOUT THE AUTHOR
               </h1>
-              <a href="https://www.amazon.com/-/e/B07CRN7XPM">
+              <Link href="https://www.amazon.com/-/e/B07CRN7XPM">
                 Visit M.R. Eastwood's author profile page!
-              </a>
+              </Link>
             </Author>
           </Content>
         </ScrollPattern>
-        <Stump src={require(imgPath + "BlackFog.png")}/>
         <Stump src={require(imgPath + "Stump.gif")}/>
       </Scroll>
     </BlueGradient>
