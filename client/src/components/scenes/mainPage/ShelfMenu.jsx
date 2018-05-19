@@ -19,7 +19,8 @@ const DrawerButton = styled(Link)`
   overflow: hidden;
   margin: 50px 0 0 0;
   &:hover {
-    opacity: 0.9;
+    background-color: white;
+    opacity: 0.1;
     cursor: pointer;
   }
 `;
@@ -45,7 +46,8 @@ const BottomButton = styled("a")`
   overflow: hidden;
   margin: 0px 50px 0px 50px;
   &:hover {
-    opacity: 0.9;
+    background-color: white;
+    opacity: 0.1;
     cursor: pointer;
   }
 `;
