@@ -4,6 +4,8 @@ import Plx from "../../common/Parallax";
 import scrollPattern from "./img/scrollPattern.gif";
 import scrollTop from "./img/scrollTop.gif";
 import frame from "./img/Frame.gif";
+import leftFireflies from "./img/FirefliesLeft.png";
+import rightFireflies from "./img/FirefliesRight.png";
 
 
 const imgPath = "./img/";
@@ -134,10 +136,42 @@ const Author = styled("div")`
 const Link = styled("a")`
   color: black;
 `
+const Parallax = styled("div")`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+`
+
+const LeftFireflies = styled("div")`
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-image: url(${leftFireflies});
+  top: 20%;
+  transform: translateZ(-2px) scale(3);
+`
+
+const RightFireflies = styled("div")`
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-image: url(${rightFireflies});
+  top: 20%;
+  transform: translateZ(-2px) scale(3);
+`
 
 const MainPage = props => (
   <Container>
     <BlueGradient>
+      <Parallax>
+        <LeftFireflies/>
+        <RightFireflies/>
+      </Parallax>
       <Frame/> 
       <Scroll>
         <Title src={require(imgPath + "Title.gif")}/>
@@ -172,7 +206,7 @@ const MainPage = props => (
             <Buy>
               <h1>BUY THE BOOK</h1>
               <p>Paperbacks available on Amazon!</p>
-              <a href="https://www.amazon.com/Truth-About-Goblins-M-R-Eastwood-ebook">
+              <a href="https://www.amazon.com/Truth-About-Goblins-M-R-Eastwood-ebook/dp/B07CNXQ8CD/ref=la_B07CRN7XPM_1_1?s=books&ie=UTF8&qid=1526740577&sr=1-1">
                 <BuyButton src={require(imgPath + "buy.png")}/>
               </a>
             </Buy>
