@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "react-emotion";
-import mandy from "../comic/img/banner.png";
 import { Link } from "react-router-dom";
 
 const Container = styled("div")`
@@ -23,10 +22,6 @@ const DrawerButton = styled(Link)`
     opacity: 0.1;
     cursor: pointer;
   }
-`;
-
-const FlexImage = styled("img")`
-  flex: none;
 `;
 
 const BottomContainer = styled("div")`

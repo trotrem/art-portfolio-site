@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "react-emotion";
-import Plx from "../../common/Parallax";
 import scrollPattern from "./img/scrollPattern.gif";
 import scrollTop from "./img/scrollTop.gif";
 import frame from "./img/Frame.gif";
@@ -59,15 +58,6 @@ const ScrollPattern = styled("div")`
   background-repeat: repeat-y;
   background-size: 100% auto;
   width: 100%;
-`
-
-const BlackFog = styled("img")`
-  position: absolute;
-  width: 100%;
-  bottom: 4vw;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: -1;
 `
 
 const Stump = styled("img")`
