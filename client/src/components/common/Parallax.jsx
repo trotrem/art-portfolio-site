@@ -1,26 +1,34 @@
-import React from "react";
-import { Parallax } from "react-parallax";
-import styled from "react-emotion";
+import React, {Component} from "react";
+import ScrollManager from "window-scroll-manager"
 
-const StyledLayer = styled("div")`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-`;
+function withParallax(WrappedComponent, speed) {
+    return class extends Component {
+        constructor(props) {
+            super(props)
+            this.state = {transform: "translateY(0%)"}
+            this.update = this.update.bind(this);
+        }
+        
+        componentDidMount() {
+            this.update();
+        }
+        
+        update() {
+            this.setState({
+                transform: `translateY(${-speed * window.pageYOffset}px)`
+            })
+            
+            window.requestAnimationFrame(this.update);
+        }
+        
+        render() {
+            let style = {
+            }
+            return (
+                <WrappedComponent {...this.props} style={{transform: this.state.transform}}/>
+            )
+        }
+    }
+}
 
-const Plx = props => {
-  return(
-    <StyledLayer>
-      <Parallax
-        bgImage={props.image}
-        bgStyle={{backgroundPosition: "center" }}
-        bgHeight={props.height+"px"}
-        strength={props.strength}
-      >
-        <div style={{ height: (props.divHeight ? props.divHeight : props.height) }} />
-      </Parallax>
-    </StyledLayer>
-  );}
-
-export default Plx;
+export default withParallax;

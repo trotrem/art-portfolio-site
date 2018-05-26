@@ -1,39 +1,44 @@
 import React, {Component} from "react";
-import Plx from "../../common/Parallax";
+import withParallax from "../../common/Parallax";
 import ShelfMenu from "./ShelfMenu.jsx";
-import shelf from "./img/plxLayers/6.gif";
+import shelf from "./img/DeskImages/Pieces/deskplank.gif";
 import styled from "react-emotion";
 
 const layerPath = "./img/plxLayers/";
 
 const imageHeight = 3839;
 
-const divHeight = 1919;
+const divHeight = 1700;
 
 const titleHeight = 1840;
 
 const PageContainer = styled("div")`
   position: relative;
-  background-color: #898989;
   overflow: hidden;
 `
 
-const ShelfLayer = styled("div")`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-image: url(${shelf});
-  background-position: center;
-`
-
 const ShelfContainer = styled("div")`
+  background-image: url(${shelf});
+  background-repeat: repeat-x;
   position: absolute;
   top: ${divHeight}px;
   left: 0px;
   width: 100%;
 `
+
+const ParallaxLayer = styled("img")`
+  display: block;
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+const Layer1 = withParallax(ParallaxLayer, 2);
+const Layer2 = withParallax(ParallaxLayer, 3);
+const Layer3 = withParallax(ParallaxLayer, 5);
+const Layer4 = withParallax(ParallaxLayer, 8);
+const Layer5 = withParallax(ParallaxLayer, 10);
 
 var autoScroll;
 
@@ -68,13 +73,12 @@ export default class MainPage extends Component {
     render(){
         return (
             <PageContainer >
-                <div style={{height:imageHeight, backgroundColor:"#252525"}}/>
-                <Plx image={require(layerPath + "1.gif")} strength={800} height={1920} divHeight={divHeight}/>
-                <Plx image={require(layerPath + "2.gif")} strength={600} height={1423} divHeight={divHeight}/>
-                <Plx image={require(layerPath + "4.gif")} strength={200} height={1756} divHeight={divHeight}/>
-                <Plx image={require(layerPath + "5.gif")} strength={100} height={1663} divHeight={divHeight}/>
-                <ShelfLayer/>
-                <Plx image={require(layerPath + "7.gif")} strength={-30} height={1919} divHeight={divHeight}/>
+                <div style={{height:imageHeight}}/>
+                <Layer1 src={require(layerPath + "1.1.gif")} height={1264}/>
+                <Layer2 src={require(layerPath + "2.gif")} height={1423}/>
+                <Layer3 src={require(layerPath + "4.gif")} height={1756}/>
+                <Layer4 src={require(layerPath + "5.gif")} height={1656}/>
+                <Layer5 src={require(layerPath + "7.gif")} height={1888}/>
                 <ShelfContainer>
                     <ShelfMenu/>
                 </ShelfContainer>
