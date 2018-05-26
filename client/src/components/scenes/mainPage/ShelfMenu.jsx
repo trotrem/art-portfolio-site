@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "react-emotion";
 import { Link } from "react-router-dom";
+import shelf from "./img/DeskImages/Pieces/deskplank.gif";
 
 const Container = styled("div")`
-  position: relative;
-  margin: auto;
-  top: 0px;
+  background-image: url(${shelf});
+  background-repeat: repeat-x;
   width: 100%;
-  max-width: 1100px;
+  height: 100%;
 `;
 
 const DrawerButton = styled(Link)`
   display: flex;
   justify-content: center;
+  align-items: center;
   max-width: 100%;
   height: 480px;
   overflow: hidden;
-  margin: 50px 0 0 0;
   &:hover {
     background-color: white;
     opacity: 0.1;

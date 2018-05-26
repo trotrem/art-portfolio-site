@@ -15,15 +15,13 @@ function withParallax(WrappedComponent, speed) {
         
         update() {
             this.setState({
-                transform: `translateY(${-speed * window.pageYOffset}px)`
+                transform: `translateY(${-speed / 1000 * window.pageYOffset}px)`
             })
             
             window.requestAnimationFrame(this.update);
         }
         
         render() {
-            let style = {
-            }
             return (
                 <WrappedComponent {...this.props} style={{transform: this.state.transform}}/>
             )
