@@ -6,9 +6,7 @@ import styled from "react-emotion";
 
 const layerPath = "./img/plxLayers/";
 
-const imageHeight = 4000;
-
-const divHeight = "1570px";
+const divHeight = 1570;
 
 const shelfTopHeight = "300px";
 
@@ -21,10 +19,9 @@ const PageContainer = styled("div")`
 `
 
 const ShelfContainer = styled("div")`
-  position: absolute;
-  top: ${divHeight};
+  position: relative;
+  top: 0px;
   left: 0px;
-  height: 100%;
   width: 100%;
 `
 
@@ -85,7 +82,7 @@ export default class MainPage extends Component {
     render(){
         return (
             <PageContainer >
-                <div style={{height:imageHeight}}/>
+                <div style={{height:divHeight}}/>
                 <Layer1 src={require(layerPath + "1.gif")} height={1920}/>
                 <Layer2 src={require(layerPath + "2.gif")} height={1423}/>
                 <Layer3 src={require(layerPath + "4.gif")} height={1756}/>

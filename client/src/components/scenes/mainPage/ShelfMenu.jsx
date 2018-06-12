@@ -6,23 +6,26 @@ import shelf from "./img/DeskImages/Pieces/deskplank.gif";
 const Container = styled("div")`
   background-image: url(${shelf});
   background-repeat: repeat-x;
+  background-size: 30% 100%;
+  padding-top: 5%;
   width: 100%;
-  height: 100%;
 `;
 
 const DrawerButton = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  height: 480px;
-  overflow: hidden;
+  display: block;
+  max-width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
   &:hover {
-    background-color: white;
-    opacity: 0.1;
+    filter: brightness(110%);    
     cursor: pointer;
   }
 `;
+
+const DrawerImage = styled("img")`
+  width: 100%;
+`
 
 const BottomContainer = styled("div")`
   position: relative;
@@ -41,8 +44,7 @@ const BottomButton = styled("a")`
   overflow: hidden;
   margin: 0px 50px 0px 50px;
   &:hover {
-    background-color: white;
-    opacity: 0.1;
+    filter: brightness(110%);    
     cursor: pointer;
   }
 `;
@@ -50,10 +52,14 @@ const BottomButton = styled("a")`
 const ShelfMenu = props => (
   <Container>
     <DrawerButton to="/mandy">
+      <DrawerImage src={require("./img/DeskImages/Drawer1.png")}/>
     </DrawerButton>
     <DrawerButton to="/goblins">
+      <DrawerImage src={require("./img/DeskImages/Drawer2.png")}/>
     </DrawerButton>
-    <DrawerButton to="/gallery"></DrawerButton>
+    <DrawerButton to="/gallery">
+      <DrawerImage src={require("./img/DeskImages/Drawer3.png")}/>
+    </DrawerButton>
     <BottomContainer>
       <BottomButton href="https://themirandachick.tumblr.com/"></BottomButton>
       <BottomButton href="https://themirandachick.deviantart.com/"></BottomButton>
