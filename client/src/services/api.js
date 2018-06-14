@@ -1,3 +1,3 @@
 export const getMandyMaxPages = () => {
-    return axios.get(URL+"/mandy/max-pages");
+    return fetch("/mandy/max-pages");
 };

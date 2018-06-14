@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import ScrollManager from "window-scroll-manager"
 
 function withParallax(WrappedComponent, speed) {
     return class extends Component {
