@@ -8,6 +8,7 @@ const Container = styled("div")`
   background-repeat: repeat-x;
   background-size: 30% 100%;
   padding-top: 5%;
+  padding-bottom: 5%;
   width: 100%;
 `;
 
@@ -33,7 +34,11 @@ const BottomContainer = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background: #000000;
+  padding: 1vh;
 `;
 
 const BottomButton = styled("a")`
