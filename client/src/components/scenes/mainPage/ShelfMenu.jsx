@@ -2,6 +2,8 @@ import React from "react";
 import styled, { css } from "react-emotion";
 import { Link } from "react-router-dom";
 import shelf from "./img/DeskImages/Pieces/deskplank.gif";
+import h_detail from "./img/DeskImages/Pieces/detail1.gif";
+import v_detail from "./img/DeskImages/Pieces/detail2.gif";
 
 const Container = styled("div") `
   background-image: url(${shelf});
@@ -21,25 +23,31 @@ const CenterWrapper = styled("div") `
 const HorizontalDetail = styled("div")`
   height: 0px;
   width: 95%;
-  border: 5px solid white;
+  border: 25px solid white;
+  border-image-source: url(${h_detail});
+  border-image-slice: 50% 14%;
+  border-image-repeat: round;
   margin: 0 auto 5% auto;
 `
 
 const verticalDetail = css`
   position: absolute;
-  height: 70%;
+  height: 81%;
   width: 0px;
-  border: 20px solid white;
+  border: 40px solid white;
+  border-image-source: url(${v_detail});
+  border-image-slice: 15% 50%;
+  border-image-repeat: round;
 `
 
 const RightVerticalDetail = styled("div")`
   ${verticalDetail}
-  right: 10%;
+  right: 5%;
 `
 
 const LeftVerticalDetail = styled("div")`
   ${verticalDetail}
-  left: 10%;
+  left: 5%;
 `
 
 const DrawerButton = styled(Link) `
@@ -68,7 +76,7 @@ const BottomContainer = styled("div") `
   margin-right: auto;
   border-radius: 5px;
   background: #000000;
-  padding: 1vw;
+  padding: 1%;
 `;
 
 const BottomButton = styled("a") `
