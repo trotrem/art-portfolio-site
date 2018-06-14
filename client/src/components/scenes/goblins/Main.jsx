@@ -5,6 +5,7 @@ import scrollTop from "./img/scrollTop.gif";
 import frame from "./img/Frame.gif";
 import leftFireflies from "./img/FirefliesLeft.png";
 import rightFireflies from "./img/FirefliesRight.png";
+import withParallax from "../../common/Parallax";
 
 
 const imgPath = "./img/";
@@ -130,42 +131,29 @@ margin-top: 6em;
 const Link = styled("a")`
   color: black;
 `
-const Parallax = styled("div")`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 2px;
-`
 
-const LeftFireflies = styled("div")`
+const LeftFireflies = withParallax(styled("div")`
   position: absolute;
   width: 20%;
   height: 100%;
   background-image: url(${leftFireflies});
   top: 20%;
-  transform: translateZ(-2px) scale(3);
-`
+`, 100);
 
-const RightFireflies = styled("div")`
+const RightFireflies = withParallax(styled("div")`
   position: absolute;
   width: 20%;
   height: 100%;
   background-image: url(${rightFireflies});
+  right: 5%;
   top: 20%;
-  transform: translateZ(-2px) scale(3);
-`
+`, 100);
 
 const MainPage = props => (
   <Container>
     <BlueGradient>
-      <Parallax>
-        <LeftFireflies/>
-        <RightFireflies/>
-      </Parallax>
+      <LeftFireflies/>
+      <RightFireflies/>
       <Frame/> 
       <Scroll>
         <Title src={require(imgPath + "Title.gif")}/>
