@@ -29,24 +29,26 @@ const DrawerImage = styled("img")`
 
 const BottomContainer = styled("div")`
   position: relative;
-  top: 50px;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin: 0 auto;
 `;
 
 const BottomButton = styled("a")`
   color: white;
-  height: 175px;
-  width: 175px;
   overflow: hidden;
-  margin: 0px 50px 0px 50px;
+  margin: 0 auto;
   &:hover {
     filter: brightness(110%);    
     cursor: pointer;
   }
+`;
+
+const BottomButtonImage = styled("img")`
+  height: 15vw;
+  width: 15vw;
 `;
 
 const ShelfMenu = props => (
@@ -61,10 +63,18 @@ const ShelfMenu = props => (
       <DrawerImage src={require("./img/DeskImages/Drawer3.png")}/>
     </DrawerButton>
     <BottomContainer>
-      <BottomButton href="https://themirandachick.tumblr.com/"></BottomButton>
-      <BottomButton href="https://themirandachick.deviantart.com/"></BottomButton>
-      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/"></BottomButton>
-      <BottomButton href="mailto:eastwoodmiranda@gmail.com"></BottomButton>
+      <BottomButton href="https://themirandachick.tumblr.com/">
+        <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")}/>
+      </BottomButton>
+      <BottomButton href="https://themirandachick.deviantart.com/">
+        <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")}/>
+      </BottomButton>
+      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
+        <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")}/>
+      </BottomButton>
+      <BottomButton href="mailto:eastwoodmiranda@gmail.com">
+        <BottomButtonImage src={require("./img/DeskImages/Gmail.png")}/>
+      </BottomButton>
     </BottomContainer>
   </Container>
 );
