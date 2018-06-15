@@ -24,9 +24,7 @@ const HorizontalDetail = styled("div")`
   height: 0px;
   width: 95%;
   border: 25px solid white;
-  border-image-source: url(${h_detail});
-  border-image-slice: 50% 14%;
-  border-image-repeat: round;
+  border-image: url(${h_detail}) 50% 14% round;
   margin: 0 auto 5% auto;
 `
 
@@ -35,9 +33,7 @@ const verticalDetail = css`
   height: 81%;
   width: 0px;
   border: 40px solid white;
-  border-image-source: url(${v_detail});
-  border-image-slice: 15% 50%;
-  border-image-repeat: round;
+  border-image: url(${v_detail}) 15% 50% round;
 `
 
 const RightVerticalDetail = styled("div")`
