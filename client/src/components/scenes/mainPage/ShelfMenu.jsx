@@ -15,35 +15,42 @@ const Container = styled("div") `
   position: relative;
 `;
 
-const CenterWrapper = styled("div") `
-  width: 70%;
-  margin: 0 auto;
+const HorizontalFlex = styled("div") `
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `
 
-const HorizontalDetail = styled("div")`
+const HorizontalDetail = styled("div") `
   height: 0px;
-  width: 95%;
+  width: 65%;
   border: 25px solid white;
   border-image: url(${h_detail}) 50% 14% round;
   margin: 0 auto 5% auto;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `
 
 const verticalDetail = css`
-  position: absolute;
-  height: 81%;
+  position: relative;
   width: 0px;
   border: 40px solid white;
   border-image: url(${v_detail}) 15% 50% round;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `
 
-const RightVerticalDetail = styled("div")`
+const RightVerticalDetail = styled("div") `
   ${verticalDetail}
-  right: 5%;
 `
 
-const LeftVerticalDetail = styled("div")`
+const LeftVerticalDetail = styled("div") `
   ${verticalDetail}
-  left: 5%;
+`
+
+const DrawerContainer = styled("div") `
 `
 
 const DrawerButton = styled(Link) `
@@ -64,7 +71,7 @@ const DrawerImage = styled("img") `
 
 const BottomContainer = styled("div") `
   position: relative;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,34 +99,36 @@ const BottomButtonImage = styled("img") `
 
 const ShelfMenu = props => (
   <Container>
-    <HorizontalDetail/>
-    <LeftVerticalDetail/>
-    <RightVerticalDetail/>
-    <CenterWrapper>
-      <DrawerButton to="/mandy">
-        <DrawerImage src={require("./img/DeskImages/Drawer1.png")} />
-      </DrawerButton>
-      <DrawerButton to="/goblins">
-        <DrawerImage src={require("./img/DeskImages/Drawer2.png")} />
-      </DrawerButton>
-      <DrawerButton to="/gallery">
-        <DrawerImage src={require("./img/DeskImages/Drawer3.png")} />
-      </DrawerButton>
-      <BottomContainer>
-        <BottomButton href="https://themirandachick.tumblr.com/">
-          <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
-        </BottomButton>
-        <BottomButton href="https://themirandachick.deviantart.com/">
-          <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
-        </BottomButton>
-        <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
-          <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")} />
-        </BottomButton>
-        <BottomButton href="mailto:eastwoodmiranda@gmail.com">
-          <BottomButtonImage src={require("./img/DeskImages/Gmail.png")} />
-        </BottomButton>
-      </BottomContainer>
-    </CenterWrapper>
+    <HorizontalDetail />
+    <HorizontalFlex>
+    <LeftVerticalDetail />
+      <DrawerContainer>
+        <DrawerButton to="/mandy">
+          <DrawerImage src={require("./img/DeskImages/Drawer1.png")} />
+        </DrawerButton>
+        <DrawerButton to="/goblins">
+          <DrawerImage src={require("./img/DeskImages/Drawer2.png")} />
+        </DrawerButton>
+        <DrawerButton to="/gallery">
+          <DrawerImage src={require("./img/DeskImages/Drawer3.png")} />
+        </DrawerButton>
+      </DrawerContainer>
+    <RightVerticalDetail />
+    </HorizontalFlex>
+    <BottomContainer>
+      <BottomButton href="https://themirandachick.tumblr.com/">
+        <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
+      </BottomButton>
+      <BottomButton href="https://themirandachick.deviantart.com/">
+        <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
+      </BottomButton>
+      <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
+        <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")} />
+      </BottomButton>
+      <BottomButton href="mailto:eastwoodmiranda@gmail.com">
+        <BottomButtonImage src={require("./img/DeskImages/Gmail.png")} />
+      </BottomButton>
+    </BottomContainer>
   </Container>
 );
 
