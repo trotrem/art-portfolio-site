@@ -19,6 +19,7 @@ const HorizontalFlex = styled("div") `
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 3%;
 `
 
 const HorizontalDetail = styled("div") `
@@ -71,7 +72,9 @@ const DrawerImage = styled("img") `
 
 const BottomContainer = styled("div") `
   position: relative;
-  width: 70%;
+  width: 800px;
+  max-width: 65%;
+  height: 12vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,9 +86,11 @@ const BottomContainer = styled("div") `
 `;
 
 const BottomButton = styled("a") `
+  width: 12vw;
+  height: 100%;
   color: white;
-  overflow: hidden;
   margin: 0 auto;
+  overflow: hidden;
   &:hover {
     filter: brightness(110%);    
     cursor: pointer;
@@ -93,8 +98,7 @@ const BottomButton = styled("a") `
 `;
 
 const BottomButtonImage = styled("img") `
-  height: 15vw;
-  width: 15vw;
+  height: 100%;
 `;
 
 const ShelfMenu = props => (
