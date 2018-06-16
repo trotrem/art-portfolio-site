@@ -13,6 +13,7 @@ const Container = styled("div") `
   padding-bottom: 5%;
   width: 100%;
   position: relative;
+  text-align:center
 `;
 
 const HorizontalFlex = styled("div") `
@@ -71,27 +72,23 @@ const DrawerImage = styled("img") `
 `
 
 const BottomContainer = styled("div") `
-  position: relative;
-  width: 800px;
-  max-width: 65%;
   height: 12vw;
   min-height: 100px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   border-radius: 5px;
+  padding: 0 1vw;
   background: #000000;
-  padding: 1%;
 `;
 
 const BottomButton = styled("a") `
-  width: 12vw;
   min-width: 100px;
-  height: 100%;
+  width: 11vw;
+  min-height: 100px;
+  height: 11vw;
   color: white;
-  margin: 0 auto;
   overflow: hidden;
   &:hover {
     filter: brightness(110%);    
@@ -101,7 +98,13 @@ const BottomButton = styled("a") `
 
 const BottomButtonImage = styled("img") `
   height: 100%;
+  width: 100%;
 `;
+
+const Separator = styled("img")`
+  height: 100%;
+  margin: 0 10px;
+`
 
 const ShelfMenu = props => (
   <Container>
@@ -125,12 +128,15 @@ const ShelfMenu = props => (
       <BottomButton href="https://themirandachick.tumblr.com/">
         <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
       </BottomButton>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
       <BottomButton href="https://themirandachick.deviantart.com/">
         <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
       </BottomButton>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
       <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
         <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")} />
       </BottomButton>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
       <BottomButton href="mailto:eastwoodmiranda@gmail.com">
         <BottomButtonImage src={require("./img/DeskImages/Gmail.png")} />
       </BottomButton>
