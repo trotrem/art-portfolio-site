@@ -6,6 +6,8 @@ import styled from "react-emotion";
 
 const layerPath = "./img/plxLayers/";
 
+const mobileLayerPath = "./img/MobileLayers/";
+
 const divHeight = 1570;
 
 const shelfTopHeight = "300px";
@@ -34,13 +36,16 @@ const ShelfTop = styled("div")`
 
 const ParallaxLayer = styled("div")`
   position: fixed;
-  background-image: url(${props => props.src});
+  background-image: url(${props => require("" + layerPath + props.image)});
   background-position: top center;
   height: ${props => props.height}px;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
+  @media (max-width: 1056px) {
+    background-image: url(${props => require("" + mobileLayerPath + props.image)});
+  }
 `
 
 const Layer1 = withParallax(ParallaxLayer, 100);
@@ -83,15 +88,15 @@ export default class MainPage extends Component {
         return (
             <PageContainer >
                 <div style={{height:divHeight}}/>
-                <Layer1 src={require(layerPath + "1.gif")} height={1920}/>
-                <Layer2 src={require(layerPath + "2.gif")} height={1423}/>
-                <Layer3 src={require(layerPath + "4.gif")} height={1756}/>
+                <Layer1 image={"1.gif"} height={1920}/>
+                <Layer2 image={"2.gif"} height={1423}/>
+                <Layer3 image={"4.gif"} height={1756}/>
                 <ShelfContainer>
                     <ShelfTop/>
                     <ShelfMenu/>
                 </ShelfContainer>
-                <Layer4 src={require(layerPath + "5.gif")} height={1656}/>
-                <Layer5 src={require(layerPath + "7.gif")} height={1888}/>
+                <Layer4 image={"5.gif"} height={1656}/>
+                <Layer5 image={"7.gif"} height={1888}/>
             </PageContainer>
         );
     }

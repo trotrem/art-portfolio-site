@@ -75,6 +75,7 @@ const BottomContainer = styled("div") `
   width: 800px;
   max-width: 65%;
   height: 12vw;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +88,7 @@ const BottomContainer = styled("div") `
 
 const BottomButton = styled("a") `
   width: 12vw;
+  min-width: 100px;
   height: 100%;
   color: white;
   margin: 0 auto;
