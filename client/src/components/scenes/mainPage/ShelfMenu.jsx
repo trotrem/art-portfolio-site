@@ -84,9 +84,9 @@ const BottomContainer = styled("div") `
 `;
 
 const BottomButton = styled("a") `
-  min-width: 100px;
+  min-width: 90px;
   width: 11vw;
-  min-height: 100px;
+  min-height: 90px;
   height: 11vw;
   color: white;
   overflow: hidden;
