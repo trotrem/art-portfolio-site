@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled, {css} from "react-emotion";
 import scrollPattern from "./img/scrollPattern.gif";
 import scrollTop from "./img/scrollTop.gif";
 import frame from "./img/Frame.gif";
@@ -32,7 +32,7 @@ const Frame = styled("div")`
   left: 0;
   box-sizing: border-box;
   border: 15vw solid transparent;
-  border-image: url(${frame}) 400 round;
+  border-image: url(${frame}) 370 round;
   height: 100%;
   width: 100%;
   pointer-events: none;
@@ -52,6 +52,7 @@ const ScrollTop = styled("div")`
   margin: 5% 0 0 0;
   width: 100%;
   height: 314px;
+  max-height: 20vw;
 `
 
 const ScrollPattern = styled("div")`
@@ -131,22 +132,23 @@ margin-top: 6em;
 const Link = styled("a")`
   color: black;
 `
-
-const LeftFireflies = withParallax(styled("div")`
+const fireflies = css`
+  top: 20%;
   position: absolute;
+  background-repeat: repeat-y;
   width: 20%;
   height: 100%;
+`
+
+const LeftFireflies = withParallax(styled("div")`
   background-image: url(${leftFireflies});
-  top: 20%;
+  ${fireflies}
 `, 100);
 
 const RightFireflies = withParallax(styled("div")`
-  position: absolute;
-  width: 20%;
-  height: 100%;
   background-image: url(${rightFireflies});
   right: 5%;
-  top: 20%;
+  ${fireflies}
 `, 100);
 
 const MainPage = props => (
@@ -188,7 +190,7 @@ const MainPage = props => (
             <Buy>
               <h1>BUY THE BOOK</h1>
               <p>Paperbacks available on Amazon!</p>
-              <a href="https://www.books2read.com/thetruthaboutgoblins">
+              <a href="https://www.books2read.com/thetruthaboutgoblins" target="_blank">
                 <BuyButton src={require(imgPath + "buy.png")}/>
               </a>
             </Buy>
@@ -196,7 +198,7 @@ const MainPage = props => (
               <h1>
                 ABOUT THE AUTHOR
               </h1>
-              <Link href="https://www.amazon.com/-/e/B07CRN7XPM">
+              <Link href="https://www.amazon.com/-/e/B07CRN7XPM" target="_blank">
                 Visit M.R. Eastwood's author profile page!
               </Link>
             </Author>

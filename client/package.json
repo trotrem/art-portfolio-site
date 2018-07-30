@@ -5,7 +5,7 @@
   "dependencies": {
     "emotion": "^9.1.2",
     "prop-types": "^15.6.0",
-    "react": "^16.1.1",
+    "react": "^16.4.1",
     "react-dom": "^16.1.1",
     "react-emotion": "^9.1.2",
     "react-parallax": "^1.5.1",

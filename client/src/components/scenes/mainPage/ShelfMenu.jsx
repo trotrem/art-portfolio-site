@@ -78,9 +78,9 @@ const BottomContainer = styled("div") `
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 0 1vw;
-  background: #000000;
+  background: #2D2725;
 `;
 
 const BottomButton = styled("a") `
@@ -112,32 +112,32 @@ const ShelfMenu = props => (
     <HorizontalFlex>
     <LeftVerticalDetail />
       <DrawerContainer>
-        <DrawerButton to="/mandy">
+        <DrawerButton to="/mandy#1" target="_blank">
           <DrawerImage src={require("./img/DeskImages/Drawer1.png")} />
         </DrawerButton>
-        <DrawerButton to="/goblins">
+        <DrawerButton to="/goblins" target="_blank">
           <DrawerImage src={require("./img/DeskImages/Drawer2.png")} />
         </DrawerButton>
-        <DrawerButton to="/gallery">
+        <DrawerButton to="/gallery" target="_blank">
           <DrawerImage src={require("./img/DeskImages/Drawer3.png")} />
         </DrawerButton>
       </DrawerContainer>
     <RightVerticalDetail />
     </HorizontalFlex>
     <BottomContainer>
-      <BottomButton href="https://themirandachick.tumblr.com/">
+      <BottomButton href="https://themirandachick.tumblr.com/" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
-      <BottomButton href="https://themirandachick.deviantart.com/">
+      <BottomButton href="https://themirandachick.deviantart.com/" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
       </BottomButton>
-      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} target="_blank"/>
       <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
         <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
-      <BottomButton href="mailto:eastwoodmiranda@gmail.com">
+      <BottomButton href="mailto:eastwoodmiranda@gmail.com" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Gmail.png")} />
       </BottomButton>
     </BottomContainer>

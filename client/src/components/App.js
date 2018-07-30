@@ -25,7 +25,7 @@ class App extends Component {
           <Route path="/" exact={true} component={Home}/>
           <Route
             path="/mandy"
-            render={() => <Comic resolution={[1295, 1690, "HiRez"]}/>}
+            render={({match}) => <Comic match={match} resolution={[1295, 1690, "HiRez"]}/>}
           />
           <Route
             path="/goblins"

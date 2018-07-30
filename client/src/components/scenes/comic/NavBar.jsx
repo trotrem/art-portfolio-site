@@ -1,29 +1,50 @@
 import React from "react";
-import styled from "react-emotion";
-import Button from "./NavButton.jsx"
+import styled, {css} from "react-emotion";
+import { Link } from "react-router-dom";
+
+const buttonStyle = css`
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  width: 15vw;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  &:hover{
+		background-color: palevioletred;
+    cursor:pointer;
+	}
+`;
 
 const Nav = styled("div")`
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "a a a a";
+  display: flex;
   height: 50px;
   background-color: #000000;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
 `;
 
-const NavButton = styled(Button)`
-  grid-area: a;
+const NavA = styled("a")`
+  ${buttonStyle}
+`;
+
+const NavLink = styled(Link)`
+  ${buttonStyle}
+`;
+
+const Button = styled("div")`
+  ${buttonStyle}
 `;
 
 const NavBar = (props) => {
   return (
     <Nav>
-      <NavButton to="/#title">Home</NavButton>
-      <NavButton to="/#title">Euh...</NavButton>
-      <NavButton to="/#title">What else?</NavButton>
-      <NavButton to="/#title">About!</NavButton>
+      <Button onClick={() => props.scrollCommand(1)}>First</Button>
+      <Button onClick={() => props.scrollCommand(-1)}>Latest</Button>
+      <NavA href="https://tapas.io/episode/944804" target="_blank">Tapas</NavA>
+      <NavLink to="/#title">Toymaker</NavLink>
     </Nav>
   );
 };

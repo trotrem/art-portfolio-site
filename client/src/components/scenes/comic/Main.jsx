@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "react-emotion";
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import Scroller from "./Scroller.jsx";
 import Sticky from "react-stickynode";
 import NavBar from "./NavBar.jsx";
 import banner from "./img/banner.png";
 import background from "./img/background.png";
 
-const Grid = styled("div") `
+const Grid = styled("div")`
   display: grid;
   grid-template-rows: 874px 50px 1fr;
   grid-template-areas: "banner" "navigation" "content";
@@ -15,13 +15,14 @@ const Grid = styled("div") `
   background-attachment: fixed;
 `;
 
-const ComicContainer = styled("div") `
+const ComicContainer = styled("div")`
+  text-align: center;
   grid-area: content;
   width: 100%;
   height: 100%;
 `;
 
-const Comic = styled("div") `
+const Comic = styled("div")`
   max-width: ${props => props.pageWidth}px;
   display: flex;
   flex-direction: column;
@@ -30,48 +31,68 @@ const Comic = styled("div") `
   margin: auto;
 `;
 
-const ComicBottom = styled("div") `
-  height: 100px;
+const ComicBottom = styled("div")`
   width: 100%;
-  background: blue;
 `
 
-const TopBanner = styled("div") `
+const BuyTeaButton = styled("a")`
+  &:hover {
+    filter: brightness(110%);    
+    cursor: pointer;
+  }
+`
+
+const TopBanner = styled("div")`
   grid-area: banner;
   background-image: url(${banner});
   background-position: center;
 `;
 
-const NavSticky = styled(Sticky) `
+const NavSticky = styled(Sticky)`
   grid-area: navigation;
 `;
 
-const scrollerRenderer = (resolution, page, maxPages) => {
-  return (<Scroller pageNum={page} resolution={resolution} maxPages={maxPages} />);
-};
+const WithRouterScroller = withRouter(Scroller);
 
-const ComicPage = props => (
-  <Grid>
-    <TopBanner />
-    <ComicContainer>
-      {props.isLoading
-        ? <p>Loading pages..</p>
-        : <Comic pageWidth={props.resolution[0]}>
-          <Route
-            exact={true}
-            path="/mandy"
-            render={() => scrollerRenderer(props.resolution, 0, props.maxPages)} />
-          <Route
-            exact={true}
-            path="/mandy/:pageNum"
-            render={({ match }) => scrollerRenderer(props.resolution, match.params.pageNum, props.maxPages)} />
-        </Comic>}
-      <ComicBottom />
-      </ComicContainer>
-      <NavSticky>
-        <NavBar />
-      </NavSticky>
-  </Grid>
+class ComicPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pageNum: window.location.hash.slice(1)
+    }
+    this.scrollTo = this.scrollTo.bind(this);
+    this.scroller = React.createRef();
+  }
+
+  scrollTo(pageIndex) {
+    this.scroller.scrollToRow(pageIndex);
+    console.log(this.scroller)
+  }
+
+  render() {
+    return (
+      <Grid>
+        <TopBanner />
+        <ComicContainer>
+          {this.props.isLoading
+            ? <p>Loading pages..</p>
+            : <Comic pageWidth={this.props.resolution[0]}>
+              <Route
+                path="/mandy/"
+                  render={() => (<WithRouterScroller onRef={ref => (this.child = ref)} pageNum={this.state.pageNum} resolution={this.props.resolution} maxPages={this.props.maxPages} />)} />
+            </Comic>}
+          <ComicBottom>
+            <BuyTeaButton>
+              <img src={require("./img/buymeatea.png")} />
+            </BuyTeaButton>
+          </ComicBottom>
+        </ComicContainer>
+        <NavSticky>
+          <NavBar scrollCommand={this.scrollTo} />
+        </NavSticky>
+      </Grid>
     );
-    
-    export default ComicPage;
+  }
+}
+
+export default ComicPage;
