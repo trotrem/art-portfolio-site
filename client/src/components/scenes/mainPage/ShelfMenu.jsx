@@ -28,6 +28,7 @@ const HorizontalDetail = styled("div") `
   width: 65%;
   border: 25px solid white;
   border-image: url(${h_detail}) 50% 14% round;
+  filter: drop-shadow(5px 5px 5px #111);
   margin: 0 auto 5% auto;
   @media (max-width: 1024px) {
     display: none;
@@ -36,6 +37,7 @@ const HorizontalDetail = styled("div") `
 
 const verticalDetail = css`
   position: relative;
+  filter: drop-shadow(5px 5px 5px #111);
   width: 0px;
   border: 40px solid white;
   border-image: url(${v_detail}) 15% 50% round;
@@ -57,12 +59,13 @@ const DrawerContainer = styled("div") `
 
 const DrawerButton = styled(Link) `
   display: block;
+  filter: drop-shadow(5px 5px 5px #111);
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
   &:hover {
-    filter: brightness(110%);    
+    filter: brightness(110%) drop-shadow(5px 5px 5px #111);    
     cursor: pointer;
   }
 `;
@@ -90,8 +93,9 @@ const BottomButton = styled("a") `
   height: 11vw;
   color: white;
   overflow: hidden;
+  filter: drop-shadow(5px 5px 5px #111);
   &:hover {
-    filter: brightness(110%);    
+    filter: brightness(110%) drop-shadow(5px 5px 5px #111);    
     cursor: pointer;
   }
 `;

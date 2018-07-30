@@ -78,13 +78,45 @@ export default class GalleryPage extends Component {
   constructor(props) {
     super(props);
 
+    this.resize = this.resize.bind(this);
+    this.onKey = this.onKey.bind(this);
+    
     this.state = {
-      focusedImageIndex: null
+      focusedImageIndex: null,
+      width: window.innerWidth
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize());
+    window.addEventListener("keydown", this.onKey);
+    this.resize();
+  }
+
+  onKey(e) {
+    if (this.state.focusedImageIndex === null) {
+      return
+    }
+    if (e.key === "ArrowLeft") {
+      this.SetFocusedImage(e, { photo: null, index: (this.state.focusedImageIndex - 1) % photos.length });
+    }
+    else if (e.key === "ArrowRight") {
+      this.SetFocusedImage(e, { photo: null, index: (this.state.focusedImageIndex + 1) % photos.length });
+    }
+  }
+
+  resize() {
+    var timer = null;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        this.setState({ width: window.innerWidth });
+      }, 100);
     };
   }
 
   SetFocusedImage = (event, obj) => {
-    this.setState({ focusedImageIndex: obj? obj.index:null });
+    this.setState({ focusedImageIndex: obj ? obj.index : null });
   };
 
   render() {
@@ -92,7 +124,7 @@ export default class GalleryPage extends Component {
       <div>
         <Gallery
           photos={photos}
-          columns={4}
+          columns={this.state.width >= 1824 ? 4 : this.state.width >= 1024 ? 3 : this.state.width >= 480 ? 2 : 1}
           margin={2}
           ImageComponent={GalleryImage}
           onClick={this.SetFocusedImage}
@@ -107,7 +139,7 @@ export default class GalleryPage extends Component {
               src={photos[this.state.focusedImageIndex].src}
               alt=""
               onClick={e => {
-                this.SetFocusedImage(e, {photo: null, index: (this.state.focusedImageIndex + 1) % photos.length});
+                this.SetFocusedImage(e, { photo: null, index: (this.state.focusedImageIndex + 1) % photos.length });
                 e.stopPropagation();
               }}
             />
