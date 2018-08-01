@@ -41,7 +41,7 @@ const Button = styled("div")`
 const NavBar = (props) => {
   return (
     <Nav>
-      <Button onClick={() => props.scrollCommand(1)}>First</Button>
+      <Button onClick={() => props.scrollCommand(0)}>First</Button>
       <Button onClick={() => props.scrollCommand(-1)}>Latest</Button>
       <NavA href="https://tapas.io/episode/944804" target="_blank">Tapas</NavA>
       <NavLink to="/#title">Toymaker</NavLink>

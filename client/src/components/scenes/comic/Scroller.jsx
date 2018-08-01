@@ -6,9 +6,11 @@ const ComicPage = styled("img")`
   max-width: 100%;
   border: 10px solid black;
 `;
+var page_height = undefined;
 
 const heightCalculator = (widthSetting, heightSetting, currentWidth) => {
-  return heightSetting / widthSetting * currentWidth;
+  page_height = heightSetting / widthSetting * currentWidth
+  return page_height;
 }
 
 function rowRenderer(folder, maxPages) {
@@ -30,7 +32,8 @@ function rowRenderer(folder, maxPages) {
 class Scroller extends React.Component {
   constructor(props) {
     super(props);
-    this.grid = React.createRef();
+    this.scrollToRow = this.scrollToRow.bind(this);
+    this.listRef = React.createRef();
   }
   componentDidMount() {
     this.props.onRef(this)
@@ -38,36 +41,42 @@ class Scroller extends React.Component {
   componentWillUnmount() {
     this.props.onRef(undefined)
   }
+  scrollToRow(row) {
+    row === -1 ? 
+      window.scrollTo(0, 924 + (this.props.maxPages - 1) * page_height):
+      window.scrollTo(0, 924 + 0 * page_height)
+  }
   render() {
     return (
-      <WindowScroller>
-        {({ height, isScrolling, onChildScroll, scrollTop }) => (
-          <AutoSizer disableHeight>
-            {({ width }) => {
-              return (
-                <List
-                  ref={this.grid}
-                  autoHeight
-                  height={height}
-                  isScrolling={isScrolling}
-                  onScroll={(s) => {
-                    onChildScroll(s);
-                    let index = Math.floor(scrollTop / heightCalculator(this.props.resolution[0], this.props.resolution[1], width)) + 1
-                    if (index != window.location.hash.slice(1)) {
-                      this.props.history.push("/mandy#" + (index));
-                    }
-                  }}
-                  rowCount={this.props.maxPages}
-                  rowHeight={heightCalculator(this.props.resolution[0], this.props.resolution[1], width)}
-                  rowRenderer={rowRenderer(this.props.resolution[2], this.props.maxPages)}
-                  scrollTop={scrollTop}
-                  width={width}
-                  scrollToIndex={this.props.pageNum - 1}
-                  scrollToAlignment="start"
-                />
-              );
-            }}
-          </AutoSizer>
+      <WindowScroller
+        ref={this._setRef}
+        scrollElement={window}>
+        {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
+          <div >
+            <AutoSizer disableHeight>
+              {({ width }) => (
+                <div ref={registerChild}>
+                  <List
+                    ref={el => {
+                      window.listEl = el;
+                    }}
+                    autoHeight
+                    height={height}
+                    isScrolling={isScrolling}
+                    onScroll={onChildScroll}
+                    overscanRowCount={2}
+                    rowCount={this.props.maxPages}
+                    rowHeight={heightCalculator(this.props.resolution[0], this.props.resolution[1], width)}
+                    rowRenderer={rowRenderer(this.props.resolution[2], this.props.maxPages)}
+                    scrollToIndex={this.props.pageNum}
+                    scrollTop={scrollTop}
+                    width={width}
+                    scrollToAlignment="start"
+                  />
+                </div>
+              )}
+            </AutoSizer>
+          </div>
         )}
       </WindowScroller>
     );

@@ -61,12 +61,10 @@ class ComicPage extends React.Component {
       pageNum: window.location.hash.slice(1)
     }
     this.scrollTo = this.scrollTo.bind(this);
-    this.scroller = React.createRef();
   }
 
   scrollTo(pageIndex) {
-    this.scroller.scrollToRow(pageIndex);
-    console.log(this.scroller)
+    this.child.scrollToRow(pageIndex);
   }
 
   render() {
@@ -79,7 +77,12 @@ class ComicPage extends React.Component {
             : <Comic pageWidth={this.props.resolution[0]}>
               <Route
                 path="/mandy/"
-                  render={() => (<WithRouterScroller onRef={ref => (this.child = ref)} pageNum={this.state.pageNum} resolution={this.props.resolution} maxPages={this.props.maxPages} />)} />
+                render={() => (
+                  <WithRouterScroller
+                    onRef={ref => (this.child = ref)}
+                    pageNum={this.state.pageNum}
+                    resolution={this.props.resolution}
+                    maxPages={this.props.maxPages} />)} />
             </Comic>}
           <ComicBottom>
             <BuyTeaButton>
