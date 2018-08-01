@@ -6,6 +6,8 @@ import frame from "./img/Frame.gif";
 import leftFireflies from "./img/FirefliesLeft.png";
 import rightFireflies from "./img/FirefliesRight.png";
 import withParallax from "../../common/Parallax";
+import mobiPreview from "./img/Preview-The-Truth-About-Goblins.mobi"
+import epubPreview from "./img/Preview-The-Truth-About-Goblins.epub"
 
 
 const imgPath = "./img/";
@@ -178,11 +180,11 @@ const MainPage = props => (
               <h1>PREVIEW</h1>
               <p>Read the first three chapters!</p>
               <PreviewFormats>
-                <a href={imgPath + "Preview-The-Truth-About-Goblins.epub"} download>
+                <a href={epubPreview} download>
                   <FormatImage src={require(imgPath + "epub.png")}/>
                 </a>
                 <ClickToDownload src={require(imgPath + "ctd.png")}/>
-                <a href={imgPath + "Preview-The-Truth-About-Goblins.mobi"} download>
+                <a href={mobiPreview} download>
                   <FormatImage src={require(imgPath + "kindle.png")}/>
                 </a>
               </PreviewFormats>
