@@ -22,19 +22,19 @@ const Container = styled("div")`
 const HorizontalFlex = styled("div")`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center
   padding-bottom: 3%;
   align-items: stretch
 `
 
 const HorizontalDetail = styled("div")`
   height: 0px;
-  width: 65%;
-  border: 25px solid white;
+  width: 90%;
+  border: 20px solid white;
   border-image: url(${h_detail}) 50% 14% round;
   filter: drop-shadow(5px 5px 5px #111);
   margin: 0 auto 5% auto;
-  @media (max-width: 1024px) {
+  @media (max-width: 1600px) {
     display: none;
   }
 `
@@ -45,7 +45,7 @@ const verticalDetail = css`
   width: 0px;
   border: 40px solid white;
   border-image: url(${v_detail}) 15% 50% round;
-  @media (max-width: 1024px) {
+  @media (max-width: 1600px) {
     display: none;
   }
 `
@@ -59,14 +59,13 @@ const LeftVerticalDetail = styled("div")`
 `
 
 const DrawerContainer = styled("div")`
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const DrawerButton = styled(Link)`
   display: block;
   filter: drop-shadow(5px 5px 5px #111);
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 5%;
   &:hover {
     filter: brightness(110%) drop-shadow(5px 5px 5px #111);    
@@ -115,23 +114,23 @@ const Separator = styled("img")`
 `
 
 const cupboard = css`
-  width: 25vw;
+  width: 10vw;
   display:flex;
   flex-direction: column;
   filter: drop-shadow(5px 5px 5px #111);
-  @media (max-width: 1024px) {
+  @media (max-width: 1600px) {
     display: none;
   }
 `
 
 const RightCupboard = styled("div")`
   ${cupboard}
-  margin-left: 5%;
+  margin-left: auto;
 `
 
 const LeftCupboard = styled("div")`
   ${cupboard}
-  margin-right: 5%;
+  margin-right: auto;
 `
 
 const cupboardExtremity = css`
