@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import shelf from "./img/DeskImages/Pieces/deskplank.gif";
 import h_detail from "./img/DeskImages/Pieces/detail1.gif";
 import v_detail from "./img/DeskImages/Pieces/detail2.gif";
+import cupboard_body from "./img/DeskImages/Pieces/cupboardbody.gif";
+import cupboard_extremity from "./img/DeskImages/Pieces/cupboardtopandbottom.gif";
+import cupboard_knob from "./img/DeskImages/Pieces/cupboardknob.gif";
 
-const Container = styled("div") `
+const Container = styled("div")`
   background-image: url(${shelf});
   background-repeat: repeat-x;
   background-size: 30% 100%;
@@ -16,14 +19,15 @@ const Container = styled("div") `
   text-align:center
 `;
 
-const HorizontalFlex = styled("div") `
+const HorizontalFlex = styled("div")`
   width: 100%;
   display: flex;
   justify-content: center;
   padding-bottom: 3%;
+  align-items: stretch
 `
 
-const HorizontalDetail = styled("div") `
+const HorizontalDetail = styled("div")`
   height: 0px;
   width: 65%;
   border: 25px solid white;
@@ -46,18 +50,18 @@ const verticalDetail = css`
   }
 `
 
-const RightVerticalDetail = styled("div") `
+const RightVerticalDetail = styled("div")`
   ${verticalDetail}
 `
 
-const LeftVerticalDetail = styled("div") `
+const LeftVerticalDetail = styled("div")`
   ${verticalDetail}
 `
 
-const DrawerContainer = styled("div") `
+const DrawerContainer = styled("div")`
 `
 
-const DrawerButton = styled(Link) `
+const DrawerButton = styled(Link)`
   display: block;
   filter: drop-shadow(5px 5px 5px #111);
   max-width: 90%;
@@ -70,11 +74,11 @@ const DrawerButton = styled(Link) `
   }
 `;
 
-const DrawerImage = styled("img") `
+const DrawerImage = styled("img")`
   width: 100%;
 `
 
-const BottomContainer = styled("div") `
+const BottomContainer = styled("div")`
   height: 12vw;
   min-height: 100px;
   display: inline-flex;
@@ -86,7 +90,7 @@ const BottomContainer = styled("div") `
   background: #2D2725;
 `;
 
-const BottomButton = styled("a") `
+const BottomButton = styled("a")`
   min-width: 90px;
   width: 11vw;
   min-height: 90px;
@@ -100,7 +104,7 @@ const BottomButton = styled("a") `
   }
 `;
 
-const BottomButtonImage = styled("img") `
+const BottomButtonImage = styled("img")`
   height: 100%;
   width: 100%;
 `;
@@ -110,11 +114,92 @@ const Separator = styled("img")`
   margin: 0 10px;
 `
 
+const cupboard = css`
+  width: 25vw;
+  display:flex;
+  flex-direction: column;
+  filter: drop-shadow(5px 5px 5px #111);
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`
+
+const RightCupboard = styled("div")`
+  ${cupboard}
+  margin-left: 5%;
+`
+
+const LeftCupboard = styled("div")`
+  ${cupboard}
+  margin-right: 5%;
+`
+
+const cupboardExtremity = css`
+  width: 100%;
+`
+
+const LeftCupboardTop = styled("img")`
+  ${cupboardExtremity}
+`
+const RightCupboardTop = styled("img")`
+  ${cupboardExtremity}
+  transform: scale(-1, 1);
+`
+const LeftCupboardBottom = styled("img")`
+  ${cupboardExtremity}
+  transform: scale(1, -1);
+`
+const RightCupboardBottom = styled("img")`
+  ${cupboardExtremity}
+  transform: scale(-1, -1);
+`
+const cupboardBody = css`
+  background-image: url(${cupboard_body});
+  background-size: contain;
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
+`
+
+const LeftCupboardBody = styled("div")`
+  ${cupboardBody}
+`
+const RightCupboardBody = styled("div")`
+  ${cupboardBody}
+  transform: scaleX(-1);
+`
+
+const knob = css`
+  background-image: url(${cupboard_knob});
+  background-size: cover;
+  position: absolute;
+  top: 20%;
+  width: 10vh;
+  height: 12vh;
+  left: 0px;
+`
+
+const LeftKnob = styled("div")`
+  ${knob}
+  filter: drop-shadow(5px 5px 5px #111);
+`
+const RightKnob = styled("div")`
+  ${knob}
+  filter: drop-shadow(-5px 5px 5px #111);
+`
+
 const ShelfMenu = props => (
   <Container>
     <HorizontalDetail />
     <HorizontalFlex>
-    <LeftVerticalDetail />
+      <LeftCupboard>
+        <LeftCupboardTop src={require("./img/DeskImages/Pieces/cupboardtopandbottom.gif")}/>
+        <LeftCupboardBody>
+          <LeftKnob/>
+        </LeftCupboardBody>
+        <LeftCupboardBottom src={require("./img/DeskImages/Pieces/cupboardtopandbottom.gif")}/>
+      </LeftCupboard>
+      <LeftVerticalDetail />
       <DrawerContainer>
         <DrawerButton to="/mandy#1" target="_blank">
           <DrawerImage src={require("./img/DeskImages/Drawer1.png")} />
@@ -126,21 +211,28 @@ const ShelfMenu = props => (
           <DrawerImage src={require("./img/DeskImages/Drawer3.png")} />
         </DrawerButton>
       </DrawerContainer>
-    <RightVerticalDetail />
+      <RightVerticalDetail />
+      <RightCupboard>
+        <RightCupboardTop src={require("./img/DeskImages/Pieces/cupboardtopandbottom.gif")}/>
+        <RightCupboardBody>
+          <RightKnob/>
+        </RightCupboardBody>
+        <RightCupboardBottom src={require("./img/DeskImages/Pieces/cupboardtopandbottom.gif")}/>
+      </RightCupboard>
     </HorizontalFlex>
     <BottomContainer>
       <BottomButton href="https://themirandachick.tumblr.com/" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
       </BottomButton>
-      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} />
       <BottomButton href="https://themirandachick.deviantart.com/" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
       </BottomButton>
-      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} target="_blank"/>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} target="_blank" />
       <BottomButton href="https://www.pinterest.ca/eastwoodmiranda/">
         <BottomButtonImage src={require("./img/DeskImages/Pinterest.png")} />
       </BottomButton>
-      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")}/>
+      <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} />
       <BottomButton href="mailto:eastwoodmiranda@gmail.com" target="_blank">
         <BottomButtonImage src={require("./img/DeskImages/Gmail.png")} />
       </BottomButton>
