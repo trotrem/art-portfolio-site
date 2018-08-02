@@ -149,7 +149,7 @@ const LeftFireflies = withParallax(styled("div")`
 
 const RightFireflies = withParallax(styled("div")`
   background-image: url(${rightFireflies});
-  right: 5%;
+  right: 0px;
   ${fireflies}
 `, 100);
 
