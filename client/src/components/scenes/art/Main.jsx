@@ -93,12 +93,16 @@ export default class GalleryPage extends Component {
     this.resize();
   }
 
+  negativeMod(n, m) {
+    return ((n % m) + m) % m;
+  }
+  
   onKey(e) {
     if (this.state.focusedImageIndex === null) {
       return
     }
     if (e.key === "ArrowLeft") {
-      this.SetFocusedImage(e, { photo: null, index: (this.state.focusedImageIndex - 1) % photos.length });
+      this.SetFocusedImage(e, { photo: null, index: this.negativeMod(this.state.focusedImageIndex - 1, photos.length)});
     }
     else if (e.key === "ArrowRight") {
       this.SetFocusedImage(e, { photo: null, index: (this.state.focusedImageIndex + 1) % photos.length });
