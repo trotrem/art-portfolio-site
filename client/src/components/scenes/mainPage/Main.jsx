@@ -96,7 +96,7 @@ export default class MainPage extends Component {
                     <ShelfMenu/>
                 </ShelfContainer>
                 <Layer4 image={"5.gif"} height={1656}/>
-                <Layer5 image={"7.gif"} height={1888}/>
+                <Layer5 image={"6.gif"} height={1888}/>
             </PageContainer>
         );
     }
