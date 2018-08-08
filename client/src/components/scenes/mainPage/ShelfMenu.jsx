@@ -5,7 +5,6 @@ import shelf from "./img/DeskImages/Pieces/deskplank.gif";
 import h_detail from "./img/DeskImages/Pieces/detail1.gif";
 import v_detail from "./img/DeskImages/Pieces/detail2.gif";
 import cupboard_body from "./img/DeskImages/Pieces/cupboardbody.gif";
-import cupboard_extremity from "./img/DeskImages/Pieces/cupboardtopandbottom.gif";
 import cupboard_knob from "./img/DeskImages/Pieces/cupboardknob.gif";
 
 const Container = styled("div")`
