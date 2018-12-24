@@ -20,9 +20,7 @@ const PageContainer = styled("div")`
 `
 
 const ShelfContainer = styled("div")`
-  position: relative;
-  top: ${shelfTopHeight};
-  left: 0px;
+  margin-top: ${shelfTopHeight};
   width: 100%;
 `
 
