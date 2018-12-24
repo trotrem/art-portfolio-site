@@ -134,30 +134,25 @@ margin-top: 6em;
 const Link = styled("a")`
   color: black;
 `
-const fireflies = css`
+const Fireflies = styled("div")`
   top: 20%;
-  position: absolute;
+  right: ${props => props.right? props.right : undefined};
+  position: fixed;
   background-repeat: repeat-y;
+  background-image: url(${props => require("" + imgPath + props.image)});
   width: 20%;
   height: 100%;
 `
 
-const LeftFireflies = withParallax(styled("div")`
-  background-image: url(${leftFireflies});
-  ${fireflies}
-`, 100);
+const LeftFireflies = withParallax(Fireflies, 200);
 
-const RightFireflies = withParallax(styled("div")`
-  background-image: url(${rightFireflies});
-  right: 0px;
-  ${fireflies}
-`, 100);
+const RightFireflies = withParallax(Fireflies, 200);
 
 const MainPage = props => (
   <Container>
     <BlueGradient>
-      <LeftFireflies/>
-      <RightFireflies/>
+      <LeftFireflies image="FirefliesLeft.png"/>
+      <RightFireflies image="FirefliesRight.png" right="0px"/>
       <Frame/> 
       <Scroll>
         <Title src={require(imgPath + "Title.gif")}/>
