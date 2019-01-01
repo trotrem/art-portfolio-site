@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import withParallax from "../../common/Parallax";
 import ShelfMenu from "./ShelfMenu.jsx";
-import shelfTop from "./img/DeskImages/Pieces/deskplank.gif";
 import styled from "react-emotion";
 
 const layerPath = "./img/plxLayers/";
@@ -21,16 +20,7 @@ const PageContainer = styled("div")`
 `
 
 const ShelfContainer = styled("div")`
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-`
-
-const ShelfTop = styled("div")`
-  background-image: url(${shelfTop});
-  background-size: cover;
-  height: ${shelfTopHeight};
+  margin-top: ${shelfTopHeight};
   width: 100%;
 `
 
@@ -92,7 +82,6 @@ export default class MainPage extends Component {
                 <Layer2 image={"2.gif"} height={1423}/>
                 <Layer3 image={"4.gif"} height={1756}/>
                 <ShelfContainer>
-                    <ShelfTop/>
                     <ShelfMenu/>
                 </ShelfContainer>
                 <Layer4 image={"5.gif"} height={1656}/>
