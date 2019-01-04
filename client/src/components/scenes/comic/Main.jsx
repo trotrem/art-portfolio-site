@@ -85,7 +85,7 @@ class ComicPage extends React.Component {
                     maxPages={this.props.maxPages} />)} />
             </Comic>}
           <ComicBottom>
-            <BuyTeaButton>
+            <BuyTeaButton href="https://www.paypal.me/toymakerprojects">
               <img src={require("./img/buymeatea.png")} />
             </BuyTeaButton>
           </ComicBottom>
