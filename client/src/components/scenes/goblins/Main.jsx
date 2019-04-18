@@ -129,6 +129,7 @@ const Buy = styled("div")`
 
 const Author = styled("div")`
 margin-top: 6em;
+font-size: 2em;
 `
 
 const Link = styled("a")`
@@ -196,7 +197,7 @@ const MainPage = props => (
                 ABOUT THE AUTHOR
               </h1>
               <Link href="https://www.amazon.com/-/e/B07CRN7XPM" target="_blank">
-                Visit M.R. Eastwood's author profile page!
+                Visit Miranda Eastwood's author profile page!
               </Link>
             </Author>
           </Content>

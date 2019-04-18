@@ -224,8 +224,8 @@ const ShelfMenu = props => (
         <BottomButtonImage src={require("./img/DeskImages/Tumblr.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} />
-      <BottomButton name="deviantart" href="https://themirandachick.deviantart.com/" target="_blank">
-        <BottomButtonImage src={require("./img/DeskImages/Deviantart.png")} />
+      <BottomButton name="instagram" href="https://www.instagram.com/themirandachick/" target="_blank">
+        <BottomButtonImage src={require("./img/DeskImages/Instagram.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} target="_blank" />
       <BottomButton name="pinterest" href="https://www.pinterest.ca/eastwoodmiranda/">
