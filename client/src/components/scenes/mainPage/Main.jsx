@@ -38,6 +38,20 @@ const ParallaxLayer = styled("div")`
   }
 `
 
+const FrontLayer = styled("div")`
+  position: absolute;
+  background-image: url(${props => require("" + layerPath + props.image)});
+  background-position: top center;
+  height: ${props => props.height}px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  @media (max-width: 1056px) {
+    background-image: url(${props => require("" + mobileLayerPath + props.image)});
+  }
+`
+
 const Layer1 = withParallax(ParallaxLayer, 100);
 const Layer2 = withParallax(ParallaxLayer, 200);
 const Layer3 = withParallax(ParallaxLayer, 400);
@@ -81,11 +95,11 @@ export default class MainPage extends Component {
                 <Layer1 image={"1.gif"} height={1920}/>
                 <Layer2 image={"2.gif"} height={1423}/>
                 <Layer3 image={"4.gif"} height={1756}/>
-                <ShelfContainer>
+                <FrontLayer image={"5.gif"} height={1656}/>
+                <FrontLayer image={"6.gif"} height={1888}/>
+                <ShelfContainer>                
                     <ShelfMenu/>
                 </ShelfContainer>
-                <Layer4 image={"5.gif"} height={1656}/>
-                <Layer5 image={"6.gif"} height={1888}/>
             </PageContainer>
         );
     }
