@@ -5,7 +5,7 @@ import styled from "react-emotion";
 
 const photos = [
   {
-    src: "https://img00.deviantart.net/3e1b/i/2016/314/6/0/master_by_themirandachick-danw7bm.png",
+    src: "https://themirandachick.deviantart.com/art/Master-644795410",
     width: 600,
     height: 898
   },
