@@ -228,7 +228,7 @@ const ShelfMenu = props => (
         <BottomButtonImage src={require("./img/DeskImages/Instagram.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} target="_blank" />
-      <BottomButton name="tapas" href="https://tapas.io/series/Her-Name-is-Mandy">
+      <BottomButton name="tapas" href="https://tapas.io/eastwoodmiranda">
         <BottomButtonImage src={require("./img/DeskImages/Tapas.png")} />
       </BottomButton>
       <Separator src={require("./img/DeskImages/Pieces/shelfseparater.gif")} />
