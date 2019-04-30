@@ -1,1 +1,0 @@
-React web application to host my artsy friend's stuff

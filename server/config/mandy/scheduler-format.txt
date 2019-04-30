@@ -1,8 +1,0 @@
-{
-  "availablePages":3,
-  "schedule":
-  [
-    {"timestamp":1493928580,"maxPages":5},
-    {"timestamp":1556899200,"maxPages":8}
-  ]
-}
