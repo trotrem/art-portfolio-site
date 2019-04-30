@@ -58,7 +58,7 @@ class ComicPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      pageNum: window.location.hash.slice(1)
+      pageNum: window.location.hash ? window.location.hash.slice(1) : null
     }
     this.scrollTo = this.scrollTo.bind(this);
   }

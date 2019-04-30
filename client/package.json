@@ -20,6 +20,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && mv build/index.html build/200.html && surge build toymakerprojects.ca"
-  },
-  "proxy": "http://localhost:3001"
+  }
 }

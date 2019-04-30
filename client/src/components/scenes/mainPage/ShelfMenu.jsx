@@ -200,7 +200,7 @@ const ShelfMenu = props => (
       </LeftCupboard>
       <LeftVerticalDetail />
       <DrawerContainer>
-        <DrawerButton name="Comics" to="/mandy#1" target="_blank">
+        <DrawerButton name="Comics" to="/mandy" target="_blank">
           <DrawerImage src={require("./img/DeskImages/Drawer1.png")} />
         </DrawerButton>
         <DrawerButton name="Books" to="/goblins" target="_blank">
