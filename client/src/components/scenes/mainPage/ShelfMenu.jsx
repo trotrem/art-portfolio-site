@@ -15,15 +15,15 @@ const Container = styled("div")`
   padding-bottom: 5%;
   width: 100%;
   position: relative;
-  text-align:center
+  text-align:center;
 `;
 
 const HorizontalFlex = styled("div")`
   width: 100%;
   display: flex;
-  justify-content: center
+  justify-content: center;
   padding-bottom: 3%;
-  align-items: stretch
+  align-items: stretch;
 `
 
 const HorizontalDetail = styled("div")`

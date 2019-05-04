@@ -46,6 +46,9 @@ const Scroll = styled("div")`
     margin-right: auto;
     padding: 15% 0 0 0;
     width: 70%;
+    @media (max-width: 600px) {
+      width: 85%;
+    }
 `;
 
 const ScrollTop = styled("div")`
@@ -80,6 +83,21 @@ const Content = styled("div")`
   font-family: MinionPro;
   p {
     font-size: 1.5em; /* 14px/16=0.875em */
+  @media (max-width: 1600px) {
+    font-size: 1.3em;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.8em;
+  }
+};
+  h1 {
+    font-size: 3em; /* 14px/16=0.875em */
+  @media (max-width: 1600px) {
+    font-size: 2.5em;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.3em;
+  }
 };
 `;
 
@@ -90,7 +108,7 @@ const PreviewFormats = styled("div")`
 `;
 
 const FormatImage = styled("img")`
-  width: 100%;
+  width: 10vw;
   &:hover{
     filter: brightness(105%);
   }
@@ -129,11 +147,18 @@ const Buy = styled("div")`
 
 const Author = styled("div")`
 margin-top: 6em;
-font-size: 2em;
+font-size: 1.2em;
 `
 
 const Link = styled("a")`
   color: black;
+  font-size: 1.6em; /* 14px/16=0.875em */
+  @media (max-width: 1600px) {
+    font-size: 1.1em;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.9em;
+  }
 `
 const Fireflies = styled("div")`
   top: 20%;
