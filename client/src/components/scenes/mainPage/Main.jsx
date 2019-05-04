@@ -7,7 +7,7 @@ const layerPath = "./img/plxLayers/";
 
 const mobileLayerPath = "./img/MobileLayers/";
 
-const divHeight = 1570;
+const divHeight = 1880;
 
 const shelfTopHeight = "300px";
 
@@ -20,7 +20,7 @@ const PageContainer = styled("div")`
 `
 
 const ShelfContainer = styled("div")`
-  margin-top: ${shelfTopHeight};
+  /*margin-top: ${shelfTopHeight};*/
   width: 100%;
 `
 
@@ -35,6 +35,16 @@ const ParallaxLayer = styled("div")`
   right: 0;
   @media (max-width: 1056px) {
     background-image: url(${props => require("" + mobileLayerPath + props.image)});
+    background-size:cover;
+    height: calc(${props => props.mHeight} * 100vw /1056);
+  }
+`
+
+const TopGap = styled("div")`
+  height: ${props => props.height}px;
+  width: 100%;
+  @media (max-width: 1056px) {
+    height: calc(1895 * 100vw / 1056);
   }
 `
 
@@ -49,6 +59,8 @@ const FrontLayer = styled("div")`
   right: 0;
   @media (max-width: 1056px) {
     background-image: url(${props => require("" + mobileLayerPath + props.image)});
+    background-size:cover;
+    height: calc(${props => props.mHeight} * 100vw / 1056);
   }
 `
 
@@ -91,12 +103,12 @@ export default class MainPage extends Component {
     render(){
         return (
             <PageContainer >
-                <div style={{height:divHeight}}/>
-                <Layer1 image={"1.gif"} height={1920}/>
-                <Layer2 image={"2.gif"} height={1423}/>
-                <Layer3 image={"4.gif"} height={1756}/>
-                <FrontLayer image={"5.gif"} height={1656}/>
-                <FrontLayer image={"6.gif"} height={1888}/>
+                <TopGap height={divHeight}/>
+                <Layer1 image={"1.gif"} height={1920} mHeight={1916}/>
+                <Layer2 image={"2.gif"} height={1423} mHeight={1412}/>
+                <Layer3 image={"4.gif"} height={1756} mHeight={1759}/>
+                <FrontLayer image={"5.gif"} height={1656} mHeight={2000}/>
+                <FrontLayer image={"6.gif"} height={1880} mHeight={1895}/>
                 <ShelfContainer>                
                     <ShelfMenu/>
                 </ShelfContainer>

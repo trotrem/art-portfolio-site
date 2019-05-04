@@ -79,7 +79,7 @@ const DrawerImage = styled("img")`
 
 const BottomContainer = styled("div")`
   height: 12vw;
-  min-height: 100px;
+  max-width: 90vw;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -90,9 +90,7 @@ const BottomContainer = styled("div")`
 `;
 
 const BottomButton = styled("a")`
-  min-width: 90px;
   width: 11vw;
-  min-height: 90px;
   height: 11vw;
   color: white;
   overflow: hidden;
@@ -110,7 +108,7 @@ const BottomButtonImage = styled("img")`
 
 const Separator = styled("img")`
   height: 100%;
-  margin: 0 10px;
+  margin: 0 1vw;
 `
 
 const cupboard = css`
