@@ -89,7 +89,7 @@ export default class MainPage extends Component {
             if(hash){
                 window.scrollTo(0, titleHeight - window.innerHeight);
             }
-            else{
+            else if(window.innerWidth > 1056) {
                 window.scrollTo(0, 0);
                 autoScroll = setInterval(scrollAtBegining, 10);
             }
@@ -103,7 +103,7 @@ export default class MainPage extends Component {
     render(){
         return (
             <PageContainer >
-                <TopGap height={divHeight}/>
+                <TopGap height={divHeight}>.</TopGap>
                 <Layer1 image={"1.gif"} height={1920} mHeight={1916}/>
                 <Layer2 image={"2.gif"} height={1423} mHeight={1412}/>
                 <Layer3 image={"4.gif"} height={1756} mHeight={1759}/>
