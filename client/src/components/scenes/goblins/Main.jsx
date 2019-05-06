@@ -1,10 +1,8 @@
 import React from "react";
-import styled, {css} from "react-emotion";
+import styled from "react-emotion";
 import scrollPattern from "./img/scrollPattern.gif";
 import scrollTop from "./img/scrollTop.gif";
 import frame from "./img/Frame.gif";
-import leftFireflies from "./img/FirefliesLeft.png";
-import rightFireflies from "./img/FirefliesRight.png";
 import withParallax from "../../common/Parallax";
 import mobiPreview from "./img/Preview-The-Truth-About-Goblins.mobi"
 import epubPreview from "./img/Preview-The-Truth-About-Goblins.epub"
@@ -90,7 +88,7 @@ const Content = styled("div")`
     font-size: 0.8em;
   }
 };
-  h1 {
+  h1, h2 {
     font-size: 3em; /* 14px/16=0.875em */
   @media (max-width: 1600px) {
     font-size: 2.5em;
@@ -181,12 +179,14 @@ const MainPage = props => (
       <RightFireflies image="FirefliesRight.png" right="0px"/>
       <Frame/> 
       <Scroll>
-        <Title src={require(imgPath + "Title.gif")}/>
+        <h1 style={{margin:"0 0 0 0"}}>
+          <Title src={require(imgPath + "Title.gif")} alt="The Truth About Goblins"/>
+        </h1>
         <ScrollTop/>
         <ScrollPattern>
           <Content>
             <About>
-              <h1>ABOUT</h1>
+              <h2>ABOUT</h2>
               <p>Anny's parents are dead. In an instant, she is alone, forced to face an
                 impossible question that has shadowed her existence since she was a child. But
                 the answer to this question will not be found above ground.</p>
@@ -198,30 +198,30 @@ const MainPage = props => (
                 ground in the Goblin Market.</p>
             </About>
             <Preview>
-              <h1>PREVIEW</h1>
+              <h2>PREVIEW</h2>
               <p>Read the first three chapters!</p>
               <PreviewFormats>
                 <a href={epubPreview} download>
-                  <FormatImage src={require(imgPath + "epub.png")}/>
+                  <FormatImage src={require(imgPath + "epub.png")} alt="epub sample"/>
                 </a>
                 <ClickToDownload src={require(imgPath + "ctd.png")}/>
                 <a href={mobiPreview} download>
-                  <FormatImage src={require(imgPath + "kindle.png")}/>
+                  <FormatImage src={require(imgPath + "kindle.png")} alt="mobi Sample"/>
                 </a>
               </PreviewFormats>
             </Preview>
             <Buy>
-              <h1>BUY THE BOOK</h1>
+              <h2>BUY THE BOOK</h2>
               <p>Paperbacks available on Amazon!</p>
-              <a href="https://www.books2read.com/thetruthaboutgoblins" target="_blank">
-                <BuyButton src={require(imgPath + "buy.png")}/>
+              <a href="https://www.books2read.com/thetruthaboutgoblins" target="_blank" rel="noopener noreferrer">
+                <BuyButton src={require(imgPath + "buy.png")} alt="Buy the Book!"/>
               </a>
             </Buy>
             <Author>
-              <h1>
+              <h2>
                 ABOUT THE AUTHOR
-              </h1>
-              <Link href="https://www.amazon.com/-/e/B07CRN7XPM" target="_blank">
+              </h2>
+              <Link href="https://www.amazon.com/-/e/B07CRN7XPM" target="_blank" rel="noopener noreferrer">
                 Visit Miranda Eastwood's author profile page!
               </Link>
             </Author>

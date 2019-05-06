@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Comic from "./Main";
-import { getMandyMaxPages } from "../../../services/api";
+//import { getMandyMaxPages } from "../../../services/api";
 
 export default class ComicContainer extends Component {
   _isMounted = false;

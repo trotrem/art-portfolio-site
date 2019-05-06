@@ -67,8 +67,8 @@ const FrontLayer = styled("div")`
 const Layer1 = withParallax(ParallaxLayer, 100);
 const Layer2 = withParallax(ParallaxLayer, 200);
 const Layer3 = withParallax(ParallaxLayer, 400);
-const Layer4 = withParallax(ParallaxLayer, 1000);
-const Layer5 = withParallax(ParallaxLayer, 1000);
+//const Layer4 = withParallax(ParallaxLayer, 1000);
+//const Layer5 = withParallax(ParallaxLayer, 1000);
 
 var autoScroll;
 
@@ -108,7 +108,9 @@ export default class MainPage extends Component {
                 <Layer2 image={"2.gif"} height={1423} mHeight={1412}/>
                 <Layer3 image={"4.gif"} height={1756} mHeight={1759}/>
                 <FrontLayer image={"5.gif"} height={1656} mHeight={2000}/>
-                <FrontLayer image={"6.gif"} height={1880} mHeight={1895}/>
+                <h1 style={{margin:"0 0 0 0"}}>
+                    <FrontLayer image={"6.gif"} height={1880} mHeight={1895} title="toymaker"/>
+                </h1>
                 <ShelfContainer>                
                     <ShelfMenu/>
                 </ShelfContainer>

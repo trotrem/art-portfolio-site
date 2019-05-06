@@ -42,10 +42,11 @@ const BuyTeaButton = styled("a")`
   }
 `
 
-const TopBanner = styled("div")`
+const TopBanner = styled("h1")`
   grid-area: banner;
   background-image: url(${banner});
   background-position: center;
+  margin: 0 0 0 0;
 `;
 
 const NavSticky = styled(Sticky)`
@@ -70,7 +71,7 @@ class ComicPage extends React.Component {
   render() {
     return (
       <Grid>
-        <TopBanner />
+        <TopBanner title="Her Name is Mandy"/>
         <ComicContainer>
           {this.props.isLoading
             ? <p>Loading pages..</p>
@@ -86,7 +87,7 @@ class ComicPage extends React.Component {
             </Comic>}
           <ComicBottom>
             <BuyTeaButton href="https://www.paypal.me/toymakerprojects">
-              <img src={require("./img/buymeatea.png")} />
+              <img src={require("./img/buymeatea.png")} alt="Buy Me a Tea!"/>
             </BuyTeaButton>
           </ComicBottom>
         </ComicContainer>
