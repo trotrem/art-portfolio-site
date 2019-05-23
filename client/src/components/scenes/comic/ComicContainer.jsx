@@ -15,7 +15,7 @@ export default class ComicContainer extends Component {
 
   componentDidMount() {
     this._isMounted = true;
-    this.setState({ isLoading: false, maxPages: 101 })
+    this.setState({ isLoading: false, maxPages: 112 })
   }
 
   componentWillUnmount() {
